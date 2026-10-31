@@ -1,6 +1,6 @@
 # Binasys style guide
 
-Source: Binasys brand guide (27 October 2026). For logos, colours and layouts in detail, use the `binasys-brand` and `binasys-documents` skills.
+Source: Binasys brand guide (27 October 2026). For logos, colours and layouts in detail, use the `binasys-brand` skill.
 
 ## Tone of voice — a direct, useful voice
 Describe the business problem, the work and the next step in plain English.
@@ -43,5 +43,5 @@ Describe the business problem, the work and the next step in plain English.
 - Primary colour: Binasys blue `#0066CC` (emphasis only — logo accents, links, one highlight)
 - Text: near-black `#1D1D1F`; secondary `#626268`
 - Backgrounds: white `#FFFFFF` (default), soft surface `#F5F5F7`; dividers `#E2E2E7`
-- Font: Helvetica Neue for presentations/documents (Arial fallback); system sans-serif on websites
-- Logos: primary wordmark "binasys" for covers, proposals and introductions; compact "bns" for favicons and small placements. Files: `brand/logos/` (or the installed `binasys-brand` skill's `assets/logos/`)
+- Font: system sans-serif on the website (Helvetica Neue / Arial for documents)
+- Logos: primary wordmark "binasys" for introductions; compact "bns" for favicons and small placements. Files: `src/assets/brand/logos/`

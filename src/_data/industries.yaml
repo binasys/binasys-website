@@ -1,0 +1,80 @@
+# Industries, shown as tabs on the "Your business" page (industries.html).
+#
+# How to edit:
+# - Change the text after the colon. Keep quotes around text that contains a colon.
+# - Lines under "headline:" and "intro:" are shown on separate lines on the page. Use one line
+#   or several; each starts with "- ".
+# - To add an industry, copy a whole block (from "- id:" to the last "helps" line) and paste it
+#   below. Give it a new, unique id in lower case with no spaces (e.g. "clinics").
+# - "icon" must be one of: factory, boxes, shop, document. Ask the website team for a new icon.
+# - The order here is the order of the tabs. The first one is open when the page loads.
+#
+# House style: British English, short sentences, plain words. Say what we do for the business.
+# Never name clients.
+#
+# Fields:
+#   id:        Short unique name used in the page address. Don't change it once published.
+#   tab:       Label on the tab button.
+#   eyebrow:   Small capital-letter label above the headline.
+#   headline:  Large heading (one item per line).
+#   intro:     Short text under the heading (one item per line).
+#   helps:     The "We can help you:" list.
+
+- id: manufacturing
+  tab: Factories
+  icon: factory
+  eyebrow: MANUFACTURING
+  headline:
+    - Keep production
+    - moving.
+  intro:
+    - Keep orders, stock and production records organised.
+  helps:
+    - Turn customer orders into clear production instructions.
+    - Organise inspection records so quality issues are easier to trace.
+    - Plan stock purchases and maintenance reminders.
+
+- id: distribution
+  tab: Distributors & wholesalers
+  icon: boxes
+  eyebrow: DISTRIBUTORS & WHOLESALERS
+  headline:
+    - Stay on top of
+    - orders and stock.
+  intro:
+    - Less retyping.
+    - Less chasing payments.
+  helps:
+    - Prepare quotes and orders, with reminders to follow up on reorders.
+    - See what needs restocking and what isn’t selling.
+    - Match payments to invoices and follow up on overdue bills.
+
+- id: retail
+  tab: Shops & online stores
+  icon: shop
+  eyebrow: RETAIL & ONLINE STORES
+  headline:
+    - Know what’s selling.
+    - Know what’s in stock.
+  intro:
+    - Keep track of orders,
+    - stock and payments.
+  helps:
+    - Keep shop and online orders in one place.
+    - Keep product details up to date and plan when to restock.
+    - Check money received from online sales and flag missing payments.
+
+- id: legal
+  tab: Law firms
+  icon: document
+  eyebrow: LAW FIRMS
+  headline:
+    - More time
+    - for your clients.
+  intro:
+    - Less time gathering details
+    - and searching documents.
+  helps:
+    - Collect client details and arrange appointments.
+    - Find key terms and dates in documents for your team to review.
+    - Prepare billing records and keep clients updated.

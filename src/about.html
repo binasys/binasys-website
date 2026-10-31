@@ -21,35 +21,16 @@ pageId: "about"
   </div>
   <h2 class="team-label">Meet the team.</h2>
   <div class="founder-grid founder-grid-text">
+    {% for person in team %}
     <article class="founder-card">
       <div class="founder-name">
-        <h3>Jack</h3>
-        <span>Co-founder</span>
+        <h3>{{ person.name | e }}</h3>
+        <span>{{ person.title | e }}</span>
       </div>
-      <p class="founder-role">Entrepreneurship &amp; operations</p>
-      <p>Experience running businesses and managing the day-to-day work behind them.</p>
+      <p class="founder-role">{{ person.role | e }}</p>
+      <p>{{ person.bio | e }}</p>
     </article>
-    <article class="founder-card">
-      <div class="founder-name">
-        <h3>Stuart</h3>
-        <span>Co-founder</span>
-      </div>
-      <p class="founder-role">Strategy &amp; consulting</p>
-      <p>
-        Consulting experience at Bain, working through business problems and planning what to do
-        next.
-      </p>
-    </article>
-    <article class="founder-card">
-      <div class="founder-name">
-        <h3>Bin Xuan</h3>
-        <span>Co-founder</span>
-      </div>
-      <p class="founder-role">Coding, data &amp; analytics</p>
-      <p>
-        Technical expertise to analyse your data and build tools around the way your business works.
-      </p>
-    </article>
+    {% endfor %}
   </div>
 </section>
 <section class="approach-section wrap reveal" id="approach" aria-labelledby="approach-title">
@@ -61,27 +42,15 @@ pageId: "about"
     </h2>
   </div>
   <ol class="steps">
+    {% for step in steps %}
     <li class="reveal">
-      <span>01</span>
+      <span>{{ loop.index | pad2 }}</span>
       <div>
-        <h3>Understand your business.</h3>
-        <p>We talk through the problems and see how your team works.</p>
+        <h3>{{ step.title | e }}</h3>
+        <p>{{ step.text | e }}</p>
       </div>
     </li>
-    <li class="reveal">
-      <span>02</span>
-      <div>
-        <h3>Agree on the work.</h3>
-        <p>You receive a proposal with what we recommend, what it costs and how it could help.</p>
-      </div>
-    </li>
-    <li class="reveal">
-      <span>03</span>
-      <div>
-        <h3>Get to work.</h3>
-        <p>Once you agree, we deliver the strategy, analysis or tools you need.</p>
-      </div>
-    </li>
+    {% endfor %}
   </ol>
 </section>
 <section class="contact-section contact-compact wrap">
@@ -90,5 +59,5 @@ pageId: "about"
     What would you<br />
     like to improve?
   </h2>
-  <button class="primary contact-trigger">Let’s talk <span aria-hidden="true">↗</span></button>
+  <a class="primary" href="contact.html">Let’s talk <span aria-hidden="true">↗</span></a>
 </section>

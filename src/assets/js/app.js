@@ -539,104 +539,18 @@
   matchMedia("(min-width:921px)").addEventListener("change", (event) => {
     if (event.matches) setMenu(false, { immediate: true });
   });
-  const dialog = $("#contact-dialog");
-  let opener;
-  let dialogAnimation;
-  let closing = false;
-  function finishDialogClose() {
-    dialogAnimation?.cancel();
-    closing = false;
-    dialog.classList.remove("is-closing");
-    if (dialog.open) dialog.close();
-  }
-  function closeDialog() {
-    if (!dialog.open || closing) return;
-    closing = true;
-    dialogAnimation?.cancel();
-    if (!canAnimate()) {
-      finishDialogClose();
-      return;
-    }
-    dialog.classList.add("is-closing");
-    dialogAnimation = animate(
-      dialog,
-      [
-        { opacity: 1, transform: "none" },
-        { opacity: 0, transform: "translateY(10px) scale(.99)" },
-      ],
-      { duration: 220 },
-    );
-    dialogAnimation?.addEventListener("finish", finishDialogClose, { once: true });
-  }
-  settlers.add(() => {
-    if (closing) finishDialogClose();
-  });
-  function openContact(button) {
-    opener = button;
-    setMenu(false, { immediate: true });
-    closing = false;
-    dialog.classList.remove("is-closing");
-    dialogAnimation?.cancel();
-    dialog.showModal();
-    dialogAnimation = animate(
-      dialog,
-      [
-        { opacity: 0, transform: "translateY(18px) scale(.98)" },
-        { opacity: 1, transform: "none" },
-      ],
-      { duration: 500 },
-    );
-  }
-  document
-    .querySelectorAll(".contact-trigger")
-    .forEach((button) => button.addEventListener("click", () => openContact(button)));
-  $("#contact-close").addEventListener("click", closeDialog);
-  dialog.addEventListener("cancel", (event) => {
-    event.preventDefault();
-    closeDialog();
-  });
-  dialog.addEventListener("close", () => {
-    closing = false;
-    dialog.classList.remove("is-closing");
-    opener?.focus({ preventScroll: true });
-  });
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && menuOpen) setMenu(false, { restoreFocus: true });
   });
 
   // Optional service details on the services page; regular page links remain native.
-  const services = {
-    sales: {
-      category: "STRATEGY",
-      title: "Decide what to do first.",
-      intro: "Start with how your business works and where you want it to go.",
-      offers: [
-        "Review the work taking up your team’s time.",
-        "Identify where AI or a simpler process could help.",
-        "Agree on priorities, costs and the work involved.",
-      ],
-    },
-    work: {
-      category: "EVERYDAY WORK",
-      title: "Cut repetitive work.",
-      intro: "Give your team tools that fit the way they work.",
-      offers: [
-        "Reduce copying information between emails and files.",
-        "Draft routine emails and prepare recurring reports.",
-        "Build tools for the tasks your team repeats.",
-      ],
-    },
-    clarity: {
-      category: "DATA & ANALYSIS",
-      title: "Make sense of your numbers.",
-      intro: "Use the information you already have to make better decisions.",
-      offers: [
-        "Bring together sales, costs and other business records.",
-        "Find patterns and work out what they mean.",
-        "Turn the findings into clear reports and next steps.",
-      ],
-    },
-  };
+  // Service details come from src/_data/services.yaml via the #service-data block.
+  let services = {};
+  try {
+    services = JSON.parse($("#service-data")?.textContent || "{}");
+  } catch {
+    services = {};
+  }
   const serviceDialog = $("#service-dialog");
   if (serviceDialog) {
     let serviceOpener = null,
@@ -724,7 +638,6 @@
       fillService(id);
       serviceOpener ||= $(`.service-trigger[data-service="${id}"]`);
       if (!wasOpen) {
-        if (dialog.open) finishDialogClose();
         serviceDialog.showModal();
         $("#service-close").focus({ preventScroll: true });
         serviceAnimation = animate(
@@ -782,10 +695,6 @@
       event.preventDefault();
       requestServiceClose();
     });
-    $("#service-contact").addEventListener("click", () => {
-      afterServiceClose = () => openContact(serviceOpener);
-      requestServiceClose();
-    });
     settlers.add(() => {
       if (serviceClosing) finishServiceClose();
     });
@@ -820,4 +729,36 @@
       target.scrollIntoView({ behavior: canAnimate() ? "smooth" : "instant", block: "start" });
     }),
   );
+
+  // Contact page: submit the enquiry to Formspree without leaving the page.
+  // Without JS the form still posts normally and Formspree shows its own confirmation page.
+  const enquiryForm = $("#enquiry-form");
+  if (enquiryForm) {
+    const status = $("#enquiry-status");
+    const submit = enquiryForm.querySelector('button[type="submit"]');
+    const setStatus = (message, state) => {
+      status.textContent = message;
+      status.classList.toggle("is-error", state === "error");
+      status.classList.toggle("is-success", state === "success");
+    };
+    enquiryForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      submit.disabled = true;
+      setStatus("Sending…");
+      try {
+        const response = await fetch(enquiryForm.action, {
+          method: "POST",
+          body: new FormData(enquiryForm),
+          headers: { Accept: "application/json" },
+        });
+        if (!response.ok) throw new Error(`Formspree responded ${response.status}`);
+        enquiryForm.reset();
+        setStatus("Thank you. Your enquiry has been sent and we’ll be in touch soon.", "success");
+      } catch {
+        setStatus("Sorry, your enquiry could not be sent. Please try again in a moment.", "error");
+      } finally {
+        submit.disabled = false;
+      }
+    });
+  }
 })();

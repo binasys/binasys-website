@@ -1,0 +1,1 @@
+{# Prints a list of lines from YAML, separated by <br />. Text is escaped. #}{% macro lines(items) %}{% if items is string %}{{ items | e }}{% else %}{% for line in items %}{{ line | e }}{% if not loop.last %}<br />{% endif %}{% endfor %}{% endif %}{% endmacro %}

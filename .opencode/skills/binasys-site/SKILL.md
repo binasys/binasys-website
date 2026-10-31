@@ -37,12 +37,15 @@ If this skill and those disagree, follow them and tell the user about the confli
    markup; keep them that way. Any new raster image is WebP, diagrams are SVG, with descriptive
    names and no versions, dates or pixel sizes, in `src/assets/images/`.
 8. **No git commands** unless the user explicitly asks.
+9. **Stay inside this repo.** Everything needed is in the project folder. Don't read or search
+   outside it; if something is missing (e.g. a new logo or icon), ask the user.
 
 ## Brand files (`src/assets/brand/`)
 
-Copied from the shared brand kit (brand guide of 27 October 2026). These copies are now the source of
-truth for the site. Treat them as read-only: do not edit, rename, resize or re-export them. Only the
-brand owner (Jack) changes brand files; replace them with new official files of the same name.
+The official brand files (brand guide of 27 October 2026) and the only copy in this repo. Treat them
+as read-only: do not edit, rename, resize or re-export them. Only the brand owner (Jack) changes
+brand files; replace them with new official files of the same name. If a file you need is not
+here, ask the user for it.
 
 | Path                        | What                                                                                                      |
 | --------------------------- | --------------------------------------------------------------------------------------------------------- |
@@ -131,7 +134,7 @@ Follow `binasys-company-context` (`reference/style-guide.md`). In short:
 ---
 title: "How we help — Binasys"
 description: "…"
-pageId: "services" # body[data-page]: home | services | industries | about; matches mainNav id for aria-current
+pageId: "services" # body[data-page]: home | services | industries | about | contact | privacy | privasi | terms | not-found
 serviceDialog: true # services page only: adds partials/service-dialog.njk and its <noscript> style
 ---
 ```
@@ -143,41 +146,47 @@ Page bodies are rendered with Nunjucks, so a literal `{{` or `{%` in content mus
 
 ## Pages
 
-| File                  | Nav label     |
-| --------------------- | ------------- |
-| `src/index.html`      | Home          |
-| `src/services.html`   | How we help   |
-| `src/industries.html` | Your business |
-| `src/about.html`      | About us      |
+| File                                                                        | Nav label                                        |
+| --------------------------------------------------------------------------- | ------------------------------------------------ |
+| `src/index.html`                                                            | Home                                             |
+| `src/services.html`                                                         | How we help                                      |
+| `src/industries.html`                                                       | Your business                                    |
+| `src/about.html`                                                            | About us                                         |
+| `src/contact.html`                                                          | (header CTA)                                     |
+| `src/privacy.html`, `src/privasi.html` (BM, `lang: "ms"`), `src/terms.html` | Footer legal links (`layout: layouts/legal.njk`) |
+| `src/404.html`                                                              | none (`useBase: true`, `noindex: true`)          |
 
 ## Common tasks
 
-| Task                                    | Where                                                                                                                 |
-| --------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| Change page copy                        | `src/<page>.html` (apply the copy rules above)                                                                        |
-| Add a page                              | New `src/<name>.html`; add to `mainNav` (header + mobile menu) and `footerNav` in `src/_data/site.json`               |
-| Footer, header                          | `src/_includes/partials/footer.njk`, `header.njk`                                                                     |
-| Name, tagline, address, contact details | `src/_data/business.yaml` (use `{{ business.name }}` etc.; never hardcode). Facts come from `binasys-company-context` |
-| Nav                                     | `src/_data/site.json`                                                                                                 |
-| `<head>`, favicons, global CSS/JS       | `src/_includes/layouts/base.njk`                                                                                      |
-| Wordmark markup                         | `src/_includes/partials/logo.njk`                                                                                     |
-| Contact dialog ("Let's talk")           | `src/_includes/partials/contact-dialog.njk`; any `.contact-trigger` button opens `#contact-dialog`                    |
-| Service detail dialog (services page)   | `src/_includes/partials/service-dialog.njk`; content filled in by `app.js`                                            |
-| Colours                                 | Variable mapping at the top of `src/assets/css/site.css`; brand values in `src/assets/brand/tokens.css` (read-only)   |
-| Logos, favicons                         | `src/assets/brand/` (read-only, official files)                                                                       |
+| Task                                    | Where                                                                                                                                                                                                                                               |
+| --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Change page copy                        | Headings/intros: `src/<page>.html`. Repeating content is in YAML (apply the copy rules above): `team.yaml`, `steps.yaml` (about), `services.yaml` (services cards + dialog + home summary cards), `industries.yaml` (industry tabs) in `src/_data/` |
+| Multi-line YAML text                    | Lists of lines rendered with `lines()` from `src/_includes/macros.njk` (joins with `<br />`, escapes text)                                                                                                                                          |
+| Industry icons, service illustrations   | `src/_includes/icons/<name>.njk` (named by `icon:` in `industries.yaml`); `src/_includes/service-art/<id>.njk`                                                                                                                                      |
+| Legal pages                             | `src/privacy.html` + `src/privasi.html` (keep in step), `src/terms.html`; links in `legalNav` in `site.json`                                                                                                                                        |
+| Add a page                              | New `src/<name>.html`; add to `mainNav` (header + mobile menu) and `footerNav` in `src/_data/site.json`                                                                                                                                             |
+| Footer, header                          | `src/_includes/partials/footer.njk`, `header.njk`                                                                                                                                                                                                   |
+| Name, tagline, address, contact details | `src/_data/business.yaml` (use `{{ business.name }}` etc.; never hardcode). Facts come from `binasys-company-context`                                                                                                                               |
+| Nav                                     | `src/_data/site.json`                                                                                                                                                                                                                               |
+| `<head>`, favicons, global CSS/JS       | `src/_includes/layouts/base.njk`                                                                                                                                                                                                                    |
+| Wordmark markup                         | `src/_includes/partials/logo.njk`                                                                                                                                                                                                                   |
+| "Let's talk"                            | Links to `contact.html` (Formspree enquiry form; endpoint in `business.yaml`)                                                                                                                                                                       |
+| Service detail dialog (services page)   | `src/_includes/partials/service-dialog.njk`; `services.yaml` is written into `#service-data` JSON (filter `serviceData` in `eleventy.config.js`) and read by `app.js`. Never hardcode service text in JS                                            |
+| Colours                                 | Variable mapping at the top of `src/assets/css/site.css`; brand values in `src/assets/brand/tokens.css` (read-only)                                                                                                                                 |
+| Logos, favicons                         | `src/assets/brand/` (read-only, official files)                                                                                                                                                                                                     |
 
 ## Scripts (`src/assets/js/`)
 
 - `navigation.js`: loaded in `<head>`; cross-page transition/reveal (`pagereveal`); respects
   `prefers-reduced-motion`.
 - `app.js`: loaded at end of `<body>`; mobile menu (`.menu-toggle` / `#mobile-menu`), scrolled
-  header, contact dialog open/close/Escape, industry tabs and example details, hero paper-stack
+  header, enquiry form, service dialog, industry tabs and example details, hero paper-stack
   animation with its pause/play toggle, scroll reveals; respects `prefers-reduced-motion`.
 
 ## Verify every change
 
 ```sh
-npm run format   # Prettier (skips *.njk, images, src/assets/brand/ and the shared skills)
+npm run format   # Prettier (skips *.njk, images, src/assets/brand/ and .opencode/skills/)
 npm run lint     # Prettier check + Stylelint + build + HTMLHint on dist/
 npm start        # http://localhost:8080. Check affected pages at desktop and ~390px mobile
 ```
@@ -188,7 +197,7 @@ Before finishing, check that:
 - When renaming or moving an asset, a search of `src/` finds no remaining references to the old
   path.
 - The homepage hero animation runs, its pause button works, and reduced motion is respected.
-- The contact dialog opens from every "Let's talk" button and closes with × and Escape.
+- Every "Let's talk" button goes to `contact.html`; the service dialog opens, switches services and closes with × and Escape.
 - Industry tabs work with mouse and keyboard; the mobile menu opens and closes.
 - **Brand review** (per `binasys-brand`) on anything visual you changed: right mark for the space,
   proportions, minimum size, clear space, background contrast, palette-only colours, one blue
@@ -200,5 +209,5 @@ GitHub Actions (`.github/workflows/deploy.yml`) builds and deploys `dist/` to Gi
 push to `main`. Pull requests into `main` only build and lint. Only a build failure blocks deployment;
 lint is reported but non-blocking, so still run `npm run lint` locally. Keep all paths relative: the
 site is served from `/binasys-website/` until the custom domain `www.binasys.com.my` (registered;
-primary, bare domain redirects to it) is pointed at GitHub Pages. Do not add `src/CNAME` until the
+primary, bare domain redirects to it) is pointed at GitHub Pages. When switching, also set `basePath` in `site.json` to `/`. Do not add `src/CNAME` until the
 user confirms the DNS is set up (see README, "Deploying").

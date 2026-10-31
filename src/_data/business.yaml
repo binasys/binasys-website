@@ -4,8 +4,17 @@ name: Binasys
 tagline: "Business, better."
 website: https://www.binasys.com.my
 office: North Kiara, Kuala Lumpur, Malaysia
-# Contact details are not published yet. Leave as null until the user provides them.
+# Registered company details from SSM. Shown in the footer and legal pages once filled in.
+# Leave as null to hide. Example: legalName: "Binasys Sdn. Bhd."
+#                                  registrationNumber: "202601012345 (1234567-X)"
+legalName: null
+registrationNumber: null
+# Full LinkedIn page address, e.g. https://www.linkedin.com/company/binasys. null hides it.
+linkedin: null
+# Shown on contact.html under the enquiry form. Set to null to hide.
 contact:
-  email: null
-  phone: null
-  pendingMessage: Contact details coming soon.
+  email: mgmt@binasys.com.my
+  phone: "+60 12-562 6929"
+  # Formspree endpoint for the enquiry form on contact.html. Submissions are emailed to the
+  # address set on the form in the Formspree dashboard (mgmt@binasys.com.my).
+  formEndpoint: https://formspree.io/f/myeedobp

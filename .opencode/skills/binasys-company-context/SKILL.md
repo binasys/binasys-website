@@ -21,10 +21,11 @@ Load only what you need:
 2. If a detail you need (e.g. contact details, a new client) isn't in the reference files, ask the user — don't guess.
 3. Never include confidential information (client names, prices, internal metrics) in content meant for the public unless the user explicitly confirms it's allowed.
 4. Apply the style guide to everything you write for the user.
-5. For logos, colours, favicons or visual design, also use the `binasys-brand` skill. For slides, proposals, reports, charts and tables, use `binasys-documents`.
+5. For logos, colours, favicons or visual design, also use the `binasys-brand` skill (it also covers charts, tables and graphics).
+6. Everything you need is in this repo. Don't read or search outside the project folder; ask the user instead.
 
 ## Tell the user
 When you've applied company context, mention briefly which guidelines you followed (e.g. "Used our house style: short sentences, British spelling").
 
 ## Keeping this up to date
-Changes to these files go through the `binasys-skill-authoring` skill (dev → PR → main). Owner: see `.github/CODEOWNERS` in the skills repo.
+Edit these files directly in this repo (`.opencode/skills/binasys-company-context/`).

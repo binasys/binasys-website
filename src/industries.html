@@ -18,184 +18,57 @@ pageId: "industries"
         Here are a few ways we can help.
       </p>
     </div>
+    {% from "macros.njk" import lines %}
     <div class="industry-tabs" role="tablist" aria-label="Choose your industry">
-      <span class="tab-indicator" aria-hidden="true"></span
-      ><button
-        id="tab-manufacturing"
+      <span class="tab-indicator" aria-hidden="true"></span>{% for item in industries %}<button
+        id="tab-{{ item.id }}"
         role="tab"
-        aria-controls="panel-manufacturing"
-        aria-selected="true"
-        tabindex="0"
-        data-industry="manufacturing"
+        aria-controls="panel-{{ item.id }}"
+        aria-selected="{{ 'true' if loop.first else 'false' }}"
+        tabindex="{{ '0' if loop.first else '-1' }}"
+        data-industry="{{ item.id }}"
       >
-        Factories</button
-      ><button
-        id="tab-distribution"
-        role="tab"
-        aria-controls="panel-distribution"
-        aria-selected="false"
-        tabindex="-1"
-        data-industry="distribution"
-      >
-        Distributors & wholesalers</button
-      ><button
-        id="tab-retail"
-        role="tab"
-        aria-controls="panel-retail"
-        aria-selected="false"
-        tabindex="-1"
-        data-industry="retail"
-      >
-        Shops & online stores</button
-      ><button
-        id="tab-legal"
-        role="tab"
-        aria-controls="panel-legal"
-        aria-selected="false"
-        tabindex="-1"
-        data-industry="legal"
-      >
-        Law firms
-      </button>
+        {{ item.tab | e }}</button
+      >{% endfor %}
     </div>
     <div class="industry-panels">
+      {% for item in industries %}
       <article
         class="industry-panel"
-        id="panel-manufacturing"
+        id="panel-{{ item.id }}"
         role="tabpanel"
-        aria-labelledby="tab-manufacturing"
+        aria-labelledby="tab-{{ item.id }}"
         tabindex="0"
       >
         <div class="industry-lead">
           <span class="industry-icon" aria-hidden="true"
-            ><svg viewBox="0 0 64 64">
-              <path d="M11 51V29l15 8V25l15 9V14h10v37H11Z" />
-              <path d="M20 44h3m10 0h3m9 0h3M43 8h6" /></svg
-          ></span>
-          <p class="eyebrow">MANUFACTURING</p>
-          <h3>
-            Keep production<br />
-            moving.
-          </h3>
-          <p>Keep orders, stock and production records organised.</p>
+            >{% include "icons/" + (item.icon or "document") + ".njk" ignore missing %}</span
+          >
+          <p class="eyebrow">{{ item.eyebrow | e }}</p>
+          <h3>{{ lines(item.headline) }}</h3>
+          <p>{{ lines(item.intro) }}</p>
         </div>
         <div class="industry-offer">
           <h4>We can help you:</h4>
           <ul>
-            <li>Turn customer orders into clear production instructions.</li>
-            <li>Organise inspection records so quality issues are easier to trace.</li>
-            <li>Plan stock purchases and maintenance reminders.</li>
+            {% for help in item.helps %}
+            <li>{{ help | e }}</li>
+            {% endfor %}
           </ul>
         </div>
       </article>
-      <article
-        class="industry-panel"
-        id="panel-distribution"
-        role="tabpanel"
-        aria-labelledby="tab-distribution"
-        tabindex="0"
-      >
-        <div class="industry-lead">
-          <span class="industry-icon" aria-hidden="true"
-            ><svg viewBox="0 0 64 64">
-              <path
-                d="m12 22 20-11 20 11v22L32 55 12 44V22Zm0 0 20 11 20-11M32 33v22M22 16l20 11v10"
-              /></svg
-          ></span>
-          <p class="eyebrow">DISTRIBUTORS & WHOLESALERS</p>
-          <h3>
-            Stay on top of<br />
-            orders and stock.
-          </h3>
-          <p>
-            Less retyping.<br />
-            Less chasing payments.
-          </p>
-        </div>
-        <div class="industry-offer">
-          <h4>We can help you:</h4>
-          <ul>
-            <li>Prepare quotes and orders, with reminders to follow up on reorders.</li>
-            <li>See what needs restocking and what isn’t selling.</li>
-            <li>Match payments to invoices and follow up on overdue bills.</li>
-          </ul>
-        </div>
-      </article>
-      <article
-        class="industry-panel"
-        id="panel-retail"
-        role="tabpanel"
-        aria-labelledby="tab-retail"
-        tabindex="0"
-      >
-        <div class="industry-lead">
-          <span class="industry-icon" aria-hidden="true"
-            ><svg viewBox="0 0 64 64">
-              <path
-                d="M12 27h40l-4-15H16l-4 15Zm3 0v25h34V27M26 52V38h12v14M23 12l-2 15m20-15 2 15M12 27c0 8 10 8 10 0 0 8 10 8 10 0 0 8 10 8 10 0 0 8 10 8 10 0"
-              /></svg
-          ></span>
-          <p class="eyebrow">RETAIL & ONLINE STORES</p>
-          <h3>
-            Know what’s selling.<br />
-            Know what’s in stock.
-          </h3>
-          <p>
-            Keep track of orders,<br />
-            stock and payments.
-          </p>
-        </div>
-        <div class="industry-offer">
-          <h4>We can help you:</h4>
-          <ul>
-            <li>Keep shop and online orders in one place.</li>
-            <li>Keep product details up to date and plan when to restock.</li>
-            <li>Check money received from online sales and flag missing payments.</li>
-          </ul>
-        </div>
-      </article>
-      <article
-        class="industry-panel"
-        id="panel-legal"
-        role="tabpanel"
-        aria-labelledby="tab-legal"
-        tabindex="0"
-      >
-        <div class="industry-lead">
-          <span class="industry-icon" aria-hidden="true"
-            ><svg viewBox="0 0 64 64">
-              <path d="M17 9h21l11 11v35H17V9Zm21 0v12h11M25 31h16M25 39h16M25 47h9" /></svg
-          ></span>
-          <p class="eyebrow">LAW FIRMS</p>
-          <h3>
-            More time<br />
-            for your clients.
-          </h3>
-          <p>
-            Less time gathering details<br />
-            and searching documents.
-          </p>
-        </div>
-        <div class="industry-offer">
-          <h4>We can help you:</h4>
-          <ul>
-            <li>Collect client details and arrange appointments.</li>
-            <li>Find key terms and dates in documents for your team to review.</li>
-            <li>Prepare billing records and keep clients updated.</li>
-          </ul>
-        </div>
-      </article>
+      {% endfor %}
     </div>
     <p class="other-business">
       Don’t see your business here?
-      <button class="inline-contact contact-trigger">
+      <a class="inline-contact" href="contact.html">
         Let’s talk <span aria-hidden="true">↗</span>
-      </button>
+      </a>
     </p>
   </div>
 </section>
 <section class="contact-section contact-compact wrap">
   <p class="eyebrow">LET’S START HERE</p>
   <h2>What’s slowing you down?</h2>
-  <button class="primary contact-trigger">Let’s talk <span aria-hidden="true">↗</span></button>
+  <a class="primary" href="contact.html">Let’s talk <span aria-hidden="true">↗</span></a>
 </section>

@@ -17,7 +17,7 @@ pageId: "home"
     to solve problems and put plans into action.
   </p>
   <div class="hero-actions">
-    <button class="primary contact-trigger">Let’s talk <span aria-hidden="true">↗</span></button
+    <a class="primary" href="contact.html">Let’s talk <span aria-hidden="true">↗</span></a
     ><a href="services.html" class="text-link">How we help <span aria-hidden="true">↗</span></a>
   </div>
   <div class="hero-art">
@@ -80,24 +80,14 @@ pageId: "home"
     </h2>
   </div>
   <div class="summary-grid">
-    <a class="summary-card" href="services.html#sales"
-      ><span class="number" aria-hidden="true">01</span>
-      <h3>Know where to start.</h3>
-      <p>Find where AI could help and what’s worth doing first.</p>
+    {% for service in services %}
+    <a class="summary-card" href="services.html#{{ service.id }}"
+      ><span class="number" aria-hidden="true">{{ loop.index | pad2 }}</span>
+      <h3>{{ service.home.title | e }}</h3>
+      <p>{{ service.home.text | e }}</p>
       <span class="summary-link" aria-hidden="true"><span>↗</span></span></a
     >
-    <a class="summary-card" href="services.html#work"
-      ><span class="number" aria-hidden="true">02</span>
-      <h3>Get time back.</h3>
-      <p>Spend less of the day updating files, writing routine emails and chasing information.</p>
-      <span class="summary-link" aria-hidden="true"><span>↗</span></span></a
-    >
-    <a class="summary-card" href="services.html#clarity"
-      ><span class="number" aria-hidden="true">03</span>
-      <h3>Use your numbers.</h3>
-      <p>Understand what’s happening in your business and what needs attention.</p>
-      <span class="summary-link" aria-hidden="true"><span>↗</span></span></a
-    >
+    {% endfor %}
   </div>
 </section>
 <section
@@ -123,5 +113,5 @@ pageId: "home"
     Ready to<br />
     get started?
   </h2>
-  <button class="primary contact-trigger">Let’s talk <span aria-hidden="true">↗</span></button>
+  <a class="primary" href="contact.html">Let’s talk <span aria-hidden="true">↗</span></a>
 </section>

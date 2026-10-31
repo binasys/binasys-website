@@ -1,0 +1,7 @@
+---
+layout: layouts/base.njk
+---
+<section class="page-intro wrap" aria-labelledby="legal-title"><a class="back-home" href="index.html"><span aria-hidden="true">←</span> {{ "Laman utama" if lang == "ms" else "Home" }}</a><p class="eyebrow">{{ eyebrow }}</p><h1 id="legal-title">{{ heading }}</h1><p>{{ "Kemas kini terakhir" if lang == "ms" else "Last updated" }}: {{ updated }}</p></section>
+<article class="legal-body wrap">
+{{ content | safe }}
+</article>

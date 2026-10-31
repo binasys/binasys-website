@@ -45,5 +45,4 @@ Binasys provides hands-on business consulting for Malaysian SMEs, using business
 
 ## Useful links
 - Website: https://www.binasys.com.my
-- Skills & shared resources repo: https://github.com/binasys/binasys-shared-resources
-- Brand assets (logos, favicons, colours, brand guide): `brand/` in the shared resources repo; also installed with the `binasys-brand` skill
+- Brand assets (logos, favicons, colours): `src/assets/brand/` in this repo; rules in the `binasys-brand` skill
