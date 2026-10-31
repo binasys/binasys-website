@@ -1,5 +1,5 @@
 ---
-title: "Business, better — Binasys"
+title: "Binasys"
 description: "Hands-on business consulting for Malaysian SMEs. Binasys finds what's slowing your business down and helps fix it, using AI where it makes sense."
 pageId: "home"
 ---
@@ -9,14 +9,15 @@ pageId: "home"
     <span class="blue-dot" aria-hidden="true"></span>Business consulting for Malaysian SMEs.
   </p>
   <h1 id="hero-title">
-    <span class="hero-line"><span>Business,</span></span>
-    <span class="hero-line"><span>better.</span></span>
+    <span class="hero-line"><span>Building Tomorrow,</span></span
+    ><br />
+    <span class="hero-line"><span>Starting Today.</span></span>
   </h1>
   <p class="hero-intro">
     We find what’s slowing your business down and help fix it, using AI where it makes sense.
   </p>
   <div class="hero-actions">
-    <a class="primary" href="contact.html">Let’s talk <span aria-hidden="true">↗</span></a
+    <a class="primary" href="/contact">Let’s talk <span aria-hidden="true">↗</span></a
     ><a href="#how-it-works" class="text-link"
       >See how it works <span aria-hidden="true">↗</span></a
     >
@@ -97,7 +98,7 @@ rejectattr("placeholder") | list) %} {% if shownResults | length %}
   </div>
   <div class="summary-grid">
     {% for service in services %}
-    <a class="summary-card" href="services.html#{{ service.id }}"
+    <a class="summary-card" href="/services#{{ service.id }}"
       ><span class="number"
         ><span aria-hidden="true">{{ loop.index | pad2 }} </span>{{ service.name | upper | e
         }}</span
@@ -170,14 +171,12 @@ rejectattr("placeholder") | list) %} {% if shownResults | length %}
   <ul class="industry-links">
     {% for item in industries %}
     <li>
-      <a href="industries.html#{{ item.id }}"
-        >{{ item.tab | e }} <span aria-hidden="true">↗</span></a
-      >
+      <a href="/industries#{{ item.id }}">{{ item.tab | e }} <span aria-hidden="true">↗</span></a>
     </li>
     {% endfor %}
   </ul>
   <p class="industry-other">
-    Something else? <a class="text-link" href="contact.html">Tell us about your business</a>
+    Something else? <a class="text-link" href="/contact">Tell us about your business</a>
   </p>
 </section>
 <section
@@ -192,7 +191,7 @@ rejectattr("placeholder") | list) %} {% if shownResults | length %}
       Technical skills.
     </h2>
     <p>One team to work through the problem with you, from the plan to the finished tool.</p>
-    <a class="text-link" href="about.html">Meet the team <span aria-hidden="true">↗</span></a>
+    <a class="text-link" href="/about">Meet the team <span aria-hidden="true">↗</span></a>
   </div>
   <ul class="team-mini">
     {% for person in team %}
@@ -227,7 +226,7 @@ rejectattr("placeholder") | list) %} {% if shownResults | length %}
       <summary>Is our data safe?</summary>
       <p>
         We only use the information we need for the work and keep it private. See our
-        <a href="privacy.html">privacy notice</a>.
+        <a href="/privacy">privacy notice</a>.
       </p>
     </details>
     <details>
@@ -246,7 +245,7 @@ rejectattr("placeholder") | list) %} {% if shownResults | length %}
   </h2>
   <p class="contact-promise">Free first call. No obligation. We reply as soon as we can.</p>
   <div class="hero-actions">
-    <a class="primary" href="contact.html">Let’s talk <span aria-hidden="true">↗</span></a
+    <a class="primary" href="/contact">Let’s talk <span aria-hidden="true">↗</span></a
     >{% if business.contact.whatsapp %}<a
       class="secondary-pill"
       href="https://wa.me/{{ business.contact.whatsapp }}"

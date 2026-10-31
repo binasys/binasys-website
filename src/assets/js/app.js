@@ -11,14 +11,14 @@
   function redirectLegacyHomeHash() {
     if (page !== "home") return false;
     const legacy = {
-      "#work": "services.html#work",
-      "#help": "services.html",
-      "#industries": "industries.html",
-      "#about": "about.html#about",
-      "#approach": "about.html#approach",
-      "#service-sales": "services.html#service-sales",
-      "#service-work": "services.html#service-work",
-      "#service-clarity": "services.html#service-clarity",
+      "#work": "/services#work",
+      "#help": "/services",
+      "#industries": "/industries",
+      "#about": "/about#about",
+      "#approach": "/about#approach",
+      "#service-sales": "/services#service-sales",
+      "#service-work": "/services#service-work",
+      "#service-clarity": "/services#service-clarity",
     }[location.hash];
     if (legacy) {
       location.replace(new URL(legacy, location.href));
@@ -42,8 +42,11 @@
   const pageForURL = (url) => {
     const file = url.pathname.split("/").pop();
     return {
+      services: "services",
       "services.html": "services",
+      industries: "industries",
       "industries.html": "industries",
+      about: "about",
       "about.html": "about",
       "index.html": "home",
       "preview.html": "home",

@@ -2,19 +2,19 @@
   "lang": "en",
   "basePath": "/",
   "mainNav": [
-    { "id": "services", "label": "How we help", "url": "services.html" },
-    { "id": "industries", "label": "Your business", "url": "industries.html" },
-    { "id": "about", "label": "About us", "url": "about.html" }
+    { "id": "services", "label": "How We Help", "url": "/services" },
+    { "id": "industries", "label": "Your Business", "url": "/industries" },
+    { "id": "about", "label": "About Us", "url": "/about" }
   ],
   "footerNav": [
-    { "id": "home", "label": "Home", "url": "index.html" },
-    { "id": "services", "label": "How we help", "url": "services.html" },
-    { "id": "industries", "label": "Your business", "url": "industries.html" },
-    { "id": "about", "label": "About us", "url": "about.html" },
-    { "id": "contact", "label": "Contact", "url": "contact.html" }
+    { "id": "home", "label": "Home", "url": "/" },
+    { "id": "services", "label": "How We Help", "url": "/services" },
+    { "id": "industries", "label": "Your Business", "url": "/industries" },
+    { "id": "about", "label": "About Us", "url": "/about" },
+    { "id": "contact", "label": "Contact", "url": "/contact" }
   ],
   "legalNav": [
-    { "id": "privacy", "label": "Privacy notice", "url": "privacy.html" },
-    { "id": "terms", "label": "Terms of use", "url": "terms.html" }
+    { "id": "privacy", "label": "Privacy Notice", "url": "/privacy" },
+    { "id": "terms", "label": "Terms of Use", "url": "/terms" }
   ]
 }

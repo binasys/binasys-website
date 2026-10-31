@@ -1,14 +1,14 @@
 # Public company facts. Source: binasys-company-context skill (reference/company.md).
 # Never add client names, prices or internal metrics here.
 name: Binasys
-tagline: "Build tomorrow. Start today."
+tagline: "Building Tomorrow, Starting Today."
 website: https://www.binasys.com.my
 office: North Kiara, Kuala Lumpur, Malaysia
 # Registered company details from SSM. Shown in the footer and legal pages once filled in.
 # Leave as null to hide. Example: legalName: "Binasys Sdn. Bhd."
 #                                  registrationNumber: "202601012345 (1234567-X)"
-legalName: null
-registrationNumber: null
+legalName: "Binasys Sdn. Bhd."
+registrationNumber: "202601043178 (1705273-D)"
 # Full LinkedIn page address, e.g. https://www.linkedin.com/company/binasys. null hides it.
 linkedin: null
 # Shown on contact.html under the enquiry form. Set to null to hide.

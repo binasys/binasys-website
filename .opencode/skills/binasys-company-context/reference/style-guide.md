@@ -22,7 +22,7 @@ Describe the business problem, the work and the next step in plain English.
 - Dates: 27 October 2026 (day month year, no ordinal); short form 27 Oct 2026
 - Currency: RM 1,200 (Malaysian ringgit)
 - Company name is always written "Binasys" — never "BINASYS", "BinaSys" or "Binasys Sdn Bhd" unless the legal name is required. The lowercase "binasys" only appears inside the logo artwork.
-- Tagline: "Business, better." (with the comma and full stop)
+- Tagline: "Building Tomorrow, Starting Today." (with the comma and full stop)
 
 ## Formatting
 - Headings in sentence case

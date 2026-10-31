@@ -3,7 +3,7 @@
 ## In one sentence
 Binasys provides hands-on business consulting for Malaysian SMEs, using business experience and AI to support strategy, analysis and implementation.
 
-**Tagline:** Business, better.
+**Tagline:** Building Tomorrow, Starting Today.
 
 ## Key facts
 - Founded: 2026
