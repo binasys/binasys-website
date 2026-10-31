@@ -1,90 +1,192 @@
 ---
 title: "Privacy notice — Binasys"
+titleMs: "Notis privasi — Binasys"
 description: "How Binasys collects, uses and protects the personal data you send us through this website, under Malaysia's Personal Data Protection Act 2010."
 pageId: "privacy"
 layout: layouts/legal.njk
+bilingual: true
 eyebrow: "PRIVACY NOTICE"
+eyebrowMs: "NOTIS PRIVASI"
 heading: "Privacy notice"
+headingMs: "Notis privasi"
 updated: "31 October 2026"
+updatedMs: "31 Oktober 2026"
 ---
 
 {% set company = business.legalName or business.name %}
-<p>
-  This notice explains how {{ company }}{% if business.registrationNumber %} (registration no. {{
-  business.registrationNumber }}){% endif %} (“{{ business.name }}”, “we”, “us”) collects and uses
-  your personal data when you use this website or contact us. We follow the Personal Data Protection
-  Act 2010 (PDPA). This notice is also available in
-  <a href="privasi.html" lang="ms" hreflang="ms">Bahasa Malaysia</a>. If the two versions differ,
-  the English version applies.
-</p>
+<div class="legal-lang" id="privacy-en" data-show-lang="en" lang="en">
+  <p>
+    This notice explains how {{ company }}{% if business.registrationNumber %} (registration no. {{
+    business.registrationNumber }}){% endif %} (“{{ business.name }}”, “we”, “us”) collects and uses
+    your personal data when you use this website or contact us. We follow the Personal Data
+    Protection Act 2010 (PDPA). This notice is also available in Bahasa Malaysia (use the EN | BM
+    switch above). If the two versions differ, the English version applies.
+  </p>
 
-<h2>01 What we collect</h2>
-<p>When you send an enquiry through our contact form, we collect:</p>
-<ul>
-  <li>your name and email address</li>
-  <li>your company name and role</li>
-  <li>anything you write in your message</li>
-</ul>
-<p>
-  We also receive any details you choose to share when you email or call us. All fields on the form
-  are required. If you leave them out, we may not be able to reply to you.
-</p>
-<p>
-  This website does not use cookies or analytics. Our hosting provider, GitHub Pages, may record
-  technical details such as your IP address to keep the site running securely.
-</p>
+  <h2>01 What we collect</h2>
+  <p>When you send an enquiry through our contact form, we collect:</p>
+  <ul>
+    <li>your name and email address</li>
+    <li>your company name and role</li>
+    <li>anything you write in your message</li>
+  </ul>
+  <p>
+    We also receive any details you choose to share when you email or call us. All fields on the
+    form are required. If you leave them out, we may not be able to reply to you.
+  </p>
+  <p>
+    This website does not use cookies or analytics. Our hosting provider, GitHub Pages, may record
+    technical details such as your IP address to keep the site running securely.
+  </p>
 
-<h2>02 Why we use it</h2>
-<ul>
-  <li>To reply to your enquiry and arrange a conversation.</li>
-  <li>To prepare a proposal and deliver work you have agreed to.</li>
-  <li>To keep records we need for our business and to meet legal requirements.</li>
-</ul>
-<p>We do not sell your personal data or use it for advertising.</p>
+  <h2>02 Why we use it</h2>
+  <ul>
+    <li>To reply to your enquiry and arrange a conversation.</li>
+    <li>To prepare a proposal and deliver work you have agreed to.</li>
+    <li>To keep records we need for our business and to meet legal requirements.</li>
+  </ul>
+  <p>We do not sell your personal data or use it for advertising.</p>
 
-<h2>03 Who we share it with</h2>
-<ul>
-  <li>
-    <strong>Formspree</strong>, the service that sends contact form messages to our inbox. Formspree
-    is based in the United States, so your details are processed outside Malaysia.
-  </li>
-  <li>The email and IT providers we use to run our business.</li>
-  <li>Authorities, where the law requires us to.</li>
-</ul>
-<p>
-  When your data is processed outside Malaysia, we use providers that apply appropriate safeguards
-  to protect it.
-</p>
+  <h2>03 Who we share it with</h2>
+  <ul>
+    <li>
+      <strong>Formspree</strong>, the service that sends contact form messages to our inbox.
+      Formspree is based in the United States, so your details are processed outside Malaysia.
+    </li>
+    <li>The email and IT providers we use to run our business.</li>
+    <li>Authorities, where the law requires us to.</li>
+  </ul>
+  <p>
+    When your data is processed outside Malaysia, we use providers that apply appropriate safeguards
+    to protect it.
+  </p>
 
-<h2>04 How long we keep it</h2>
-<p>
-  We keep your details only as long as we need them for the purposes above, or as long as the law
-  requires. After that, we delete them.
-</p>
+  <h2>04 How long we keep it</h2>
+  <p>
+    We keep your details only as long as we need them for the purposes above, or as long as the law
+    requires. After that, we delete them.
+  </p>
 
-<h2>05 How we protect it</h2>
-<p>
-  We take practical steps to protect your personal data from loss, misuse and unauthorised access.
-  Access is limited to the people at {{ business.name }} who need it.
-</p>
+  <h2>05 How we protect it</h2>
+  <p>
+    We take practical steps to protect your personal data from loss, misuse and unauthorised access.
+    Access is limited to the people at {{ business.name }} who need it.
+  </p>
 
-<h2>06 Your rights</h2>
-<p>You can ask us to:</p>
-<ul>
-  <li>give you a copy of the personal data we hold about you</li>
-  <li>correct personal data that is wrong or out of date</li>
-  <li>stop using your personal data or delete it, where the law allows</li>
-</ul>
-<p>We may charge a fee for access requests, as the PDPA allows. We will tell you before we do.</p>
+  <h2>06 Your rights</h2>
+  <p>You can ask us to:</p>
+  <ul>
+    <li>give you a copy of the personal data we hold about you</li>
+    <li>correct personal data that is wrong or out of date</li>
+    <li>stop using your personal data or delete it, where the law allows</li>
+  </ul>
+  <p>We may charge a fee for access requests, as the PDPA allows. We will tell you before we do.</p>
 
-<h2>07 Contact us</h2>
-<p>
-  For questions, requests or complaints about your personal data, contact us at {% if
-  business.contact.email %}<a href="mailto:{{ business.contact.email }}"
-    >{{ business.contact.email }}</a
-  >{% else %}the details on our <a href="contact.html">contact page</a>{% endif %}{% if
-  business.office %}, or write to us at {{ business.office }}{% endif %}.
-</p>
+  <h2>07 Contact us</h2>
+  <p>
+    For questions, requests or complaints about your personal data, contact us at {% if
+    business.contact.email %}<a href="mailto:{{ business.contact.email }}"
+      >{{ business.contact.email }}</a
+    >{% else %}the details on our <a href="contact.html">contact page</a>{% endif %}{% if
+    business.office %}, or write to us at {{ business.office }}{% endif %}.
+  </p>
 
-<h2>08 Changes to this notice</h2>
-<p>We may update this notice from time to time. The date at the top shows when it last changed.</p>
+  <h2>08 Changes to this notice</h2>
+  <p>
+    We may update this notice from time to time. The date at the top shows when it last changed.
+  </p>
+</div>
+
+<div class="legal-lang" id="privacy-ms" data-show-lang="ms" lang="ms">
+  <p>
+    Notis ini menerangkan cara {{ company }}{% if business.registrationNumber %} (no. pendaftaran {{
+    business.registrationNumber }}){% endif %} (“{{ business.name }}”, “kami”) mengumpul dan
+    menggunakan data peribadi anda apabila anda menggunakan laman web ini atau menghubungi kami.
+    Kami mematuhi Akta Perlindungan Data Peribadi 2010 (APDP). Notis ini juga terdapat dalam bahasa
+    Inggeris (gunakan suis EN | BM di atas). Jika terdapat perbezaan antara kedua-dua versi, versi
+    bahasa Inggeris akan terpakai.
+  </p>
+
+  <h2>01 Data yang kami kumpul</h2>
+  <p>Apabila anda menghantar pertanyaan melalui borang hubungan kami, kami mengumpul:</p>
+  <ul>
+    <li>nama dan alamat e-mel anda</li>
+    <li>nama syarikat dan jawatan anda</li>
+    <li>apa-apa yang anda tulis dalam mesej anda</li>
+  </ul>
+  <p>
+    Kami juga menerima apa-apa maklumat yang anda kongsi apabila anda menghantar e-mel atau
+    menelefon kami. Semua ruangan dalam borang adalah wajib. Jika tidak diisi, kami mungkin tidak
+    dapat membalas pertanyaan anda.
+  </p>
+  <p>
+    Laman web ini tidak menggunakan kuki atau analitik. Penyedia hos kami, GitHub Pages, mungkin
+    merekodkan maklumat teknikal seperti alamat IP anda untuk memastikan laman web berjalan dengan
+    selamat.
+  </p>
+
+  <h2>02 Tujuan kami menggunakannya</h2>
+  <ul>
+    <li>Untuk membalas pertanyaan anda dan mengatur perbincangan.</li>
+    <li>Untuk menyediakan cadangan dan melaksanakan kerja yang telah anda persetujui.</li>
+    <li>Untuk menyimpan rekod yang diperlukan bagi perniagaan kami dan mematuhi undang-undang.</li>
+  </ul>
+  <p>Kami tidak menjual data peribadi anda atau menggunakannya untuk pengiklanan.</p>
+
+  <h2>03 Pihak yang kami kongsi data</h2>
+  <ul>
+    <li>
+      <strong>Formspree</strong>, perkhidmatan yang menghantar mesej borang hubungan ke peti mel
+      kami. Formspree berpangkalan di Amerika Syarikat, jadi maklumat anda diproses di luar
+      Malaysia.
+    </li>
+    <li>Penyedia e-mel dan IT yang kami gunakan untuk menjalankan perniagaan kami.</li>
+    <li>Pihak berkuasa, apabila dikehendaki oleh undang-undang.</li>
+  </ul>
+  <p>
+    Apabila data anda diproses di luar Malaysia, kami menggunakan penyedia yang mempunyai
+    perlindungan yang sewajarnya.
+  </p>
+
+  <h2>04 Tempoh penyimpanan</h2>
+  <p>
+    Kami menyimpan maklumat anda hanya selama yang diperlukan untuk tujuan di atas, atau selama yang
+    dikehendaki oleh undang-undang. Selepas itu, kami akan memadamkannya.
+  </p>
+
+  <h2>05 Cara kami melindunginya</h2>
+  <p>
+    Kami mengambil langkah praktikal untuk melindungi data peribadi anda daripada kehilangan,
+    penyalahgunaan dan akses tanpa kebenaran. Akses terhad kepada mereka di {{ business.name }} yang
+    memerlukannya.
+  </p>
+
+  <h2>06 Hak anda</h2>
+  <p>Anda boleh meminta kami untuk:</p>
+  <ul>
+    <li>memberikan salinan data peribadi anda yang kami simpan</li>
+    <li>membetulkan data peribadi yang salah atau tidak terkini</li>
+    <li>
+      berhenti menggunakan atau memadamkan data peribadi anda, setakat yang dibenarkan undang-undang
+    </li>
+  </ul>
+  <p>
+    Kami mungkin mengenakan fi bagi permintaan akses, seperti yang dibenarkan oleh APDP. Kami akan
+    memaklumkan anda terlebih dahulu.
+  </p>
+
+  <h2>07 Hubungi kami</h2>
+  <p>
+    Untuk soalan, permintaan atau aduan tentang data peribadi anda, hubungi kami di {% if
+    business.contact.email %}<a href="mailto:{{ business.contact.email }}"
+      >{{ business.contact.email }}</a
+    >{% else %}maklumat di <a href="contact.html">halaman hubungan</a> kami{% endif %}{% if
+    business.office %}, atau tulis kepada kami di {{ business.office }}{% endif %}.
+  </p>
+
+  <h2>08 Perubahan pada notis ini</h2>
+  <p>
+    Kami mungkin mengemas kini notis ini dari semasa ke semasa. Tarikh di bahagian atas menunjukkan
+    bila ia kali terakhir diubah.
+  </p>
+</div>

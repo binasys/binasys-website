@@ -1,0 +1,41 @@
+# Results and client cases shown on the home page.
+#
+# IMPORTANT: everything below is EXAMPLE content, not real results. Items with
+# "placeholder: true" only appear when previewing locally (npm start) and carry an "Example"
+# label. They are hidden on the live site. To publish a real item, replace the text and
+# delete its "placeholder: true" line.
+#
+# House style: British English, short sentences. Never name clients (describe them by
+# industry and location). No prices.
+#
+# Fields:
+#   results:  figure (short number), text (what it means), placeholder
+#   cases:    industry, problem, work (what we did), result, placeholder
+
+results:
+  - figure: "3 days → 4 hours"
+    text: Time to prepare month-end sales reports.
+    placeholder: true
+  - figure: "12 hours"
+    text: Saved each week on copying orders between emails and spreadsheets.
+    placeholder: true
+  - figure: "1 view"
+    text: Of stock, sales and cash, instead of five separate files.
+    placeholder: true
+
+cases:
+  - industry: Distribution, Selangor
+    problem: Orders arrived by email and WhatsApp, and staff retyped them into spreadsheets.
+    work: We set up a simple tool that reads each order and adds it to one shared order list.
+    result: Fewer typing errors and orders processed on the same day.
+    placeholder: true
+  - industry: Manufacturing, Penang
+    problem: Management could not see which products were making money.
+    work: We brought sales and cost records together and built a monthly report.
+    result: Two loss-making product lines identified and repriced.
+    placeholder: true
+  - industry: Retail, Kuala Lumpur
+    problem: The owner was unsure where to start with AI.
+    work: We reviewed how the team spent its time and agreed three priorities.
+    result: A clear six-month plan, with the first change in place within a month.
+    placeholder: true

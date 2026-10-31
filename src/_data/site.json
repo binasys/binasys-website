@@ -15,7 +15,6 @@
   ],
   "legalNav": [
     { "id": "privacy", "label": "Privacy notice", "url": "privacy.html" },
-    { "id": "privasi", "label": "Notis privasi", "url": "privasi.html", "lang": "ms" },
     { "id": "terms", "label": "Terms of use", "url": "terms.html" }
   ]
 }
