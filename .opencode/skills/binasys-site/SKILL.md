@@ -119,7 +119,7 @@ Follow `binasys-company-context` (`reference/style-guide.md`). In short:
 
 - British English, short sentences, active voice, plain words. Lead with the point.
 - Headings in sentence case. Numbered items use two digits: 01, 02, 03.
-- Name is always "Binasys" (never "BINASYS", "BinaSys"). Tagline exactly "Business, better."
+- Name is always "Binasys" (never "BINASYS", "BinaSys"). Tagline exactly "Building Tomorrow, Starting Today."
 - No buzzwords (leverage, synergy, cutting-edge, revolutionary). Talk about the client's business;
   say "We use AI to <specific task>", not "AI-powered".
 - Services map to the three workstreams: 01 Strategy, 02 Analytics, 03 Implementation.
@@ -132,7 +132,7 @@ Follow `binasys-company-context` (`reference/style-guide.md`). In short:
 
 ```yaml
 ---
-title: "How we help — Binasys"
+title: "How We Help — Binasys"
 description: "…"
 pageId: "services" # body[data-page]: home | services | industries | about | contact | privacy | privasi | terms | not-found
 serviceDialog: true # services page only: adds partials/service-dialog.njk and its <noscript> style
@@ -149,9 +149,9 @@ Page bodies are rendered with Nunjucks, so a literal `{{` or `{%` in content mus
 | File                                                                        | Nav label                                        |
 | --------------------------------------------------------------------------- | ------------------------------------------------ |
 | `src/index.html`                                                            | Home                                             |
-| `src/services.html`                                                         | How we help                                      |
-| `src/industries.html`                                                       | Your business                                    |
-| `src/about.html`                                                            | About us                                         |
+| `src/services.html`                                                         | How We Help                                      |
+| `src/industries.html`                                                       | Your Business                                    |
+| `src/about.html`                                                            | About Us                                         |
 | `src/contact.html`                                                          | (header CTA)                                     |
 | `src/privacy.html`, `src/privasi.html` (BM, `lang: "ms"`), `src/terms.html` | Footer legal links (`layout: layouts/legal.njk`) |
 | `src/404.html`                                                              | none (`useBase: true`, `noindex: true`)          |

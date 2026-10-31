@@ -1,6 +1,6 @@
 # Binasys website
 
-Static website for Binasys ("Business, better."). Plain HTML, CSS and JavaScript; [Eleventy](https://www.11ty.dev/)
+Static website for Binasys. Plain HTML, CSS and JavaScript; [Eleventy](https://www.11ty.dev/)
 runs only at build time to wrap each page in a shared layout. The output in `dist/` is plain static
 files.
 
@@ -36,10 +36,10 @@ the site rebuilds and updates in a few minutes.
 | File              | What it controls                                                                      |
 | ----------------- | ------------------------------------------------------------------------------------- |
 | `business.yaml`   | Company name, tagline, office, email, phone, registered name and SSM number, LinkedIn |
-| `team.yaml`       | The founders on the About us page                                                     |
-| `steps.yaml`      | "How we work" steps on the About us page                                              |
-| `services.yaml`   | Services: cards and pop-ups on "How we help", summary cards on the home page          |
-| `industries.yaml` | Industry tabs on "Your business"                                                      |
+| `team.yaml`       | The founders on the About Us page                                                     |
+| `steps.yaml`      | "How we work" steps on the About Us page                                              |
+| `services.yaml`   | Services: cards and pop-ups on "How We Help", summary cards on the home page          |
+| `industries.yaml` | Industry tabs on "Your Business"                                                      |
 
 YAML tips: keep the indentation exactly as it is (spaces, not tabs); lines in a list start with
 `- `; put text in quotes if it contains a colon (`:`). If the site fails to build after an edit,
