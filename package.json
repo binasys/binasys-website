@@ -1,0 +1,24 @@
+{
+  "name": "binasys-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Binasys website: static HTML/CSS/JS wrapped in a shared layout by Eleventy at build time.",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "lint:html": "htmlhint \"dist/**/*.html\"",
+    "lint": "npm run format:check && npm run lint:css && npm run build && npm run lint:html"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.7",
+    "htmlhint": "^1.9.2",
+    "js-yaml": "^5.5.0",
+    "prettier": "^3.9.10",
+    "stylelint": "^17.16.0",
+    "stylelint-config-recommended": "^18.0.0"
+  },
+  "type": "module"
+}

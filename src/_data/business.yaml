@@ -1,0 +1,11 @@
+# Public company facts. Source: binasys-company-context skill (reference/company.md).
+# Never add client names, prices or internal metrics here.
+name: Binasys
+tagline: "Business, better."
+website: https://www.binasys.com.my
+office: North Kiara, Kuala Lumpur, Malaysia
+# Contact details are not published yet. Leave as null until the user provides them.
+contact:
+  email: null
+  phone: null
+  pendingMessage: Contact details coming soon.

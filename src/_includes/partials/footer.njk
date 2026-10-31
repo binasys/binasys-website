@@ -1,0 +1,1 @@
+<footer class="wrap"><a class="wordmark" href="index.html" aria-label="{{ business.name }} home">{% include "partials/logo.njk" %}</a><p>{{ business.tagline }}</p><nav class="footer-nav" aria-label="Footer navigation">{% for item in site.footerNav %}<a href="{{ item.url }}">{{ item.label }}</a>{% endfor %}</nav></footer>

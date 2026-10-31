@@ -1,0 +1,14 @@
+{
+  "lang": "en",
+  "mainNav": [
+    { "id": "services", "label": "How we help", "url": "services.html" },
+    { "id": "industries", "label": "Your business", "url": "industries.html" },
+    { "id": "about", "label": "About us", "url": "about.html" }
+  ],
+  "footerNav": [
+    { "id": "home", "label": "Home", "url": "index.html" },
+    { "id": "services", "label": "How we help", "url": "services.html" },
+    { "id": "industries", "label": "Your business", "url": "industries.html" },
+    { "id": "about", "label": "About us", "url": "about.html" }
+  ]
+}

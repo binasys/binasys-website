@@ -1,0 +1,13 @@
+dist/
+node_modules/
+brand/
+package-lock.json
+*.njk
+*.png
+*.webp
+*.ico
+*.pdf
+src/assets/brand/
+# Shared skills from binasys-shared-resources: keep byte-identical
+.opencode/skills/binasys-brand/
+.opencode/skills/binasys-company-context/

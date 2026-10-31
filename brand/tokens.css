@@ -1,0 +1,15 @@
+/* Binasys brand tokens — source: brand/brand-guide.pdf (27 October 2026).
+   Copy these variables into any Binasys web page or app. Do not invent new brand colours. */
+:root {
+  /* Colour palette — white space leads, near-black carries the message, blue provides emphasis */
+  --bns-blue: #0066CC;          /* Binasys blue: logo accents, links, selected information */
+  --bns-near-black: #1D1D1F;    /* Headings and body text */
+  --bns-white: #FFFFFF;         /* Primary canvas (default background) */
+  --bns-soft-surface: #F5F5F7;  /* Quiet support areas */
+  --bns-supporting-text: #626268; /* Secondary information */
+  --bns-rules: #E2E2E7;         /* Dividers and grids */
+
+  /* Typography */
+  --bns-font-web: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* websites */
+  --bns-font-presentation: "Helvetica Neue", Helvetica, Arial, sans-serif; /* slides & documents */
+}

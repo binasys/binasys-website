@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="{{ site.lang }}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><link rel="icon" href="assets/brand/favicons/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicons/favicon-circle-32.png"><link rel="apple-touch-icon" href="assets/brand/favicons/apple-touch-icon.png"><link rel="manifest" href="assets/brand/favicons/site.webmanifest"><meta name="theme-color" content="#0066CC"><meta name="description" content="{{ description }}"><title>{{ title }}</title><link rel="stylesheet" href="assets/brand/tokens.css"><link rel="stylesheet" href="assets/css/site.css">{% if serviceDialog %}<noscript><style>.service-trigger{display:none!important}</style></noscript>{% endif %}<script src="assets/js/navigation.js"></script></head>
+
+<body data-page="{{ pageId }}">
+<a class="skip-link" href="#main">Skip to content</a>
+{% include "partials/header.njk" %}
+<main id="main" tabindex="-1">
+{{ content | safe }}
+</main>
+{% include "partials/footer.njk" %}
+{% if serviceDialog %}
+{% include "partials/service-dialog.njk" %}
+{% endif %}
+{% include "partials/contact-dialog.njk" %}
+<script src="assets/js/app.js"></script></body></html>
