@@ -1,0 +1,30 @@
+# The team, shown on the About us page under "Meet the team."
+#
+# How to edit:
+# - Change the text after the colon. Keep the quotes if the text has a colon or starts with a symbol.
+# - To add a person, copy a whole block (from "- name:" to the end of "bio:") and paste it below.
+# - To remove a person, delete their whole block.
+# - The order here is the order on the page.
+#
+# House style: British English, short sentences, plain words. Never name clients.
+#
+# Fields:
+#   name:     First name as shown on the card.
+#   title:    Small label next to the name (e.g. "Co-founder").
+#   role:     One line on what they bring.
+#   bio:      One or two sentences.
+
+- name: Jack
+  title: Co-founder
+  role: Entrepreneurship & operations
+  bio: Experience running businesses and managing the day-to-day work behind them.
+
+- name: Stuart
+  title: Co-founder
+  role: Strategy & consulting
+  bio: Consulting experience at Bain, working through business problems and planning what to do next.
+
+- name: Bin Xuan
+  title: Co-founder
+  role: Coding, data & analytics
+  bio: Technical expertise to analyse your data and build tools around the way your business works.

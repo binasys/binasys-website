@@ -1,0 +1,71 @@
+# Services, shown on the "How we help" page (cards and "Explore" pop-up) and as the three
+# summary cards on the home page. Numbers (01, 02, 03) are added automatically from the order.
+#
+# How to edit:
+# - Change the text after the colon. Lines under "headline:" and "text:" are shown on separate
+#   lines on the page; each starts with "- ".
+# - Keep the "id" values as they are: they link each service to its illustration and to page
+#   addresses people may have bookmarked. Adding a new service needs the website team.
+#
+# House style: British English, short sentences, plain words. Say "We use AI to <task>", not
+# "AI-powered". No prices. Never name clients.
+#
+# Fields:
+#   id:        Fixed internal name (don't change).
+#   name:      Service name: on the card label, the pop-up and the pop-up's buttons.
+#   headline:  Card heading (one item per line). Also the pop-up heading.
+#   text:      Short card text (one item per line).
+#   intro:     First sentence in the pop-up.
+#   offers:    What we do (list in the pop-up, and shown on the card if JavaScript is off).
+#   home:      The summary card on the home page (title and text).
+
+- id: sales
+  name: Strategy
+  headline:
+    - Decide what
+    - to do first.
+  text:
+    - Find where AI can help.
+    - Make a plan worth putting into action.
+  intro: Start with how your business works and where you want it to go.
+  offers:
+    - Review the work taking up your team’s time.
+    - Identify where AI or a simpler process could help.
+    - Agree on priorities, costs and the work involved.
+  home:
+    title: Know where to start.
+    text: Find where AI could help and what’s worth doing first.
+
+- id: clarity
+  name: Analytics
+  headline:
+    - Make sense of
+    - your numbers.
+  text:
+    - Bring your information together.
+    - See what needs your attention.
+  intro: Use the information you already have to make better decisions.
+  offers:
+    - Bring together sales, costs and other business records.
+    - Find patterns and work out what they mean.
+    - Turn the findings into clear reports and next steps.
+  home:
+    title: Use your numbers.
+    text: Understand what’s happening in your business and what needs attention.
+
+- id: work
+  name: Implementation
+  headline:
+    - Cut repetitive
+    - work.
+  text:
+    - Spend less time on routine emails,
+    - reports and updating files.
+  intro: Give your team tools that fit the way they work.
+  offers:
+    - Reduce copying information between emails and files.
+    - Draft routine emails and prepare recurring reports.
+    - Build tools for the tasks your team repeats.
+  home:
+    title: Get time back.
+    text: Spend less of the day updating files, writing routine emails and chasing information.

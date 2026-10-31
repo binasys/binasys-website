@@ -1,0 +1,63 @@
+---
+title: "About us — Binasys"
+description: "Meet Binasys: entrepreneurship and operations, consulting experience at Bain, and expertise in coding, data and analytics."
+pageId: "about"
+---
+
+<section class="about-section wrap" id="about" aria-labelledby="about-title">
+  <a class="back-home" href="index.html"><span aria-hidden="true">←</span> Home</a>
+  <div class="section-top">
+    <p class="eyebrow">ABOUT US</p>
+    <div class="about-heading">
+      <h1 id="about-title">
+        Business experience.<br />
+        Technical skills.
+      </h1>
+      <p>
+        We bring together the experience of running businesses,<br />
+        advising companies and building tools that solve problems.
+      </p>
+    </div>
+  </div>
+  <h2 class="team-label">Meet the team.</h2>
+  <div class="founder-grid founder-grid-text">
+    {% for person in team %}
+    <article class="founder-card">
+      <div class="founder-name">
+        <h3>{{ person.name | e }}</h3>
+        <span>{{ person.title | e }}</span>
+      </div>
+      <p class="founder-role">{{ person.role | e }}</p>
+      <p>{{ person.bio | e }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+<section class="approach-section wrap reveal" id="approach" aria-labelledby="approach-title">
+  <div class="section-top">
+    <p class="eyebrow">HOW WE WORK</p>
+    <h2 id="approach-title">
+      It starts with<br />
+      a conversation.
+    </h2>
+  </div>
+  <ol class="steps">
+    {% for step in steps %}
+    <li class="reveal">
+      <span>{{ loop.index | pad2 }}</span>
+      <div>
+        <h3>{{ step.title | e }}</h3>
+        <p>{{ step.text | e }}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+<section class="contact-section contact-compact wrap">
+  <p class="eyebrow">LET’S TALK</p>
+  <h2>
+    What would you<br />
+    like to improve?
+  </h2>
+  <a class="primary" href="contact.html">Let’s talk <span aria-hidden="true">↗</span></a>
+</section>

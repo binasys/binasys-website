@@ -1,0 +1,74 @@
+---
+title: "Your business — Binasys"
+description: "Binasys works with SMEs across industries. Explore practical ways to reduce admin, organise information and put AI to work in your business."
+pageId: "industries"
+---
+
+<section class="industries-section" id="industries" aria-labelledby="industry-title">
+  <div class="wrap">
+    <div class="section-top centered page-intro">
+      <a class="back-home" href="index.html"><span aria-hidden="true">←</span> Home</a>
+      <p class="eyebrow">YOUR BUSINESS</p>
+      <h1 id="industry-title">
+        Built around<br />
+        your business.
+      </h1>
+      <p>
+        We work with SMEs across industries.<br />
+        Here are a few ways we can help.
+      </p>
+    </div>
+    {% from "macros.njk" import lines %}
+    <div class="industry-tabs" role="tablist" aria-label="Choose your industry">
+      <span class="tab-indicator" aria-hidden="true"></span>{% for item in industries %}<button
+        id="tab-{{ item.id }}"
+        role="tab"
+        aria-controls="panel-{{ item.id }}"
+        aria-selected="{{ 'true' if loop.first else 'false' }}"
+        tabindex="{{ '0' if loop.first else '-1' }}"
+        data-industry="{{ item.id }}"
+      >
+        {{ item.tab | e }}</button
+      >{% endfor %}
+    </div>
+    <div class="industry-panels">
+      {% for item in industries %}
+      <article
+        class="industry-panel"
+        id="panel-{{ item.id }}"
+        role="tabpanel"
+        aria-labelledby="tab-{{ item.id }}"
+        tabindex="0"
+      >
+        <div class="industry-lead">
+          <span class="industry-icon" aria-hidden="true"
+            >{% include "icons/" + (item.icon or "document") + ".njk" ignore missing %}</span
+          >
+          <p class="eyebrow">{{ item.eyebrow | e }}</p>
+          <h3>{{ lines(item.headline) }}</h3>
+          <p>{{ lines(item.intro) }}</p>
+        </div>
+        <div class="industry-offer">
+          <h4>We can help you:</h4>
+          <ul>
+            {% for help in item.helps %}
+            <li>{{ help | e }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <p class="other-business">
+      Don’t see your business here?
+      <a class="inline-contact" href="contact.html">
+        Let’s talk <span aria-hidden="true">↗</span>
+      </a>
+    </p>
+  </div>
+</section>
+<section class="contact-section contact-compact wrap">
+  <p class="eyebrow">LET’S START HERE</p>
+  <h2>What’s slowing you down?</h2>
+  <a class="primary" href="contact.html">Let’s talk <span aria-hidden="true">↗</span></a>
+</section>

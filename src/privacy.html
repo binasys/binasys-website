@@ -1,0 +1,90 @@
+---
+title: "Privacy notice — Binasys"
+description: "How Binasys collects, uses and protects the personal data you send us through this website, under Malaysia's Personal Data Protection Act 2010."
+pageId: "privacy"
+layout: layouts/legal.njk
+eyebrow: "PRIVACY NOTICE"
+heading: "Privacy notice"
+updated: "31 October 2026"
+---
+
+{% set company = business.legalName or business.name %}
+<p>
+  This notice explains how {{ company }}{% if business.registrationNumber %} (registration no. {{
+  business.registrationNumber }}){% endif %} (“{{ business.name }}”, “we”, “us”) collects and uses
+  your personal data when you use this website or contact us. We follow the Personal Data Protection
+  Act 2010 (PDPA). This notice is also available in
+  <a href="privasi.html" lang="ms" hreflang="ms">Bahasa Malaysia</a>. If the two versions differ,
+  the English version applies.
+</p>
+
+<h2>01 What we collect</h2>
+<p>When you send an enquiry through our contact form, we collect:</p>
+<ul>
+  <li>your name and email address</li>
+  <li>your company name and role</li>
+  <li>anything you write in your message</li>
+</ul>
+<p>
+  We also receive any details you choose to share when you email or call us. All fields on the form
+  are required. If you leave them out, we may not be able to reply to you.
+</p>
+<p>
+  This website does not use cookies or analytics. Our hosting provider, GitHub Pages, may record
+  technical details such as your IP address to keep the site running securely.
+</p>
+
+<h2>02 Why we use it</h2>
+<ul>
+  <li>To reply to your enquiry and arrange a conversation.</li>
+  <li>To prepare a proposal and deliver work you have agreed to.</li>
+  <li>To keep records we need for our business and to meet legal requirements.</li>
+</ul>
+<p>We do not sell your personal data or use it for advertising.</p>
+
+<h2>03 Who we share it with</h2>
+<ul>
+  <li>
+    <strong>Formspree</strong>, the service that sends contact form messages to our inbox. Formspree
+    is based in the United States, so your details are processed outside Malaysia.
+  </li>
+  <li>The email and IT providers we use to run our business.</li>
+  <li>Authorities, where the law requires us to.</li>
+</ul>
+<p>
+  When your data is processed outside Malaysia, we use providers that apply appropriate safeguards
+  to protect it.
+</p>
+
+<h2>04 How long we keep it</h2>
+<p>
+  We keep your details only as long as we need them for the purposes above, or as long as the law
+  requires. After that, we delete them.
+</p>
+
+<h2>05 How we protect it</h2>
+<p>
+  We take practical steps to protect your personal data from loss, misuse and unauthorised access.
+  Access is limited to the people at {{ business.name }} who need it.
+</p>
+
+<h2>06 Your rights</h2>
+<p>You can ask us to:</p>
+<ul>
+  <li>give you a copy of the personal data we hold about you</li>
+  <li>correct personal data that is wrong or out of date</li>
+  <li>stop using your personal data or delete it, where the law allows</li>
+</ul>
+<p>We may charge a fee for access requests, as the PDPA allows. We will tell you before we do.</p>
+
+<h2>07 Contact us</h2>
+<p>
+  For questions, requests or complaints about your personal data, contact us at {% if
+  business.contact.email %}<a href="mailto:{{ business.contact.email }}"
+    >{{ business.contact.email }}</a
+  >{% else %}the details on our <a href="contact.html">contact page</a>{% endif %}{% if
+  business.office %}, or write to us at {{ business.office }}{% endif %}.
+</p>
+
+<h2>08 Changes to this notice</h2>
+<p>We may update this notice from time to time. The date at the top shows when it last changed.</p>
