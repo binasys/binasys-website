@@ -375,9 +375,25 @@
       { once: true },
     );
   }
+  // Deep links: industries.html#retail (or #panel-retail) opens that tab.
+  const industryFromHash = () => {
+    const id = decodeURIComponent(location.hash.slice(1)).replace(/^panel-/, "");
+    return tabs.some((tab) => tab.dataset.industry === id) ? id : null;
+  };
+  const rememberIndustry = (id) => history.replaceState(null, "", `#${id}`);
+  const showIndustryFromHash = ({ motion = true } = {}) => {
+    const id = industryFromHash();
+    if (!id) return;
+    selectIndustry(id, { motion });
+    $(".industry-tabs")?.scrollIntoView({
+      block: "center",
+      behavior: canAnimate() ? "smooth" : "auto",
+    });
+  };
   tabs.forEach((tab, index) => {
     tab.addEventListener("click", () => {
       if (tab.dataset.industry !== activeIndustry) selectIndustry(tab.dataset.industry);
+      rememberIndustry(tab.dataset.industry);
     });
     tab.addEventListener("keydown", (event) => {
       let next;
@@ -389,15 +405,19 @@
         event.preventDefault();
         tabs[next].focus();
         selectIndustry(tabs[next].dataset.industry);
+        rememberIndustry(tabs[next].dataset.industry);
       }
     });
   });
   if (tabs.length && viewport) {
     activeIndustry =
+      industryFromHash() ||
       tabs.find((tab) => tab.getAttribute("aria-selected") === "true")?.dataset.industry ||
       tabs[0].dataset.industry;
     document.body.classList.add("enhanced");
     selectIndustry(activeIndustry, { motion: false });
+    if (industryFromHash()) requestAnimationFrame(() => showIndustryFromHash({ motion: false }));
+    addEventListener("hashchange", () => showIndustryFromHash());
     if ("ResizeObserver" in window && $(".industry-tabs"))
       new ResizeObserver(placeIndicator).observe($(".industry-tabs"));
   }
@@ -759,6 +779,40 @@
       } finally {
         submit.disabled = false;
       }
+    });
+  }
+
+  // Bilingual legal pages (privacy notice): EN | BM switch.
+  // The initial language (hash, then saved choice, then EN) is set by an inline script in <head>.
+  const langButtons = document.querySelectorAll("[data-set-lang]");
+  if (langButtons.length) {
+    const root = document.documentElement;
+    const titles = {
+      en: document.body.dataset.titleEn || document.title,
+      ms: document.body.dataset.titleMs || document.title,
+    };
+    const setLang = (lang, save) => {
+      root.lang = lang;
+      root.setAttribute("data-legal-lang", lang);
+      langButtons.forEach((b) =>
+        b.setAttribute("aria-pressed", String(b.dataset.setLang === lang)),
+      );
+      if (titles[lang]) document.title = titles[lang];
+      if (save) {
+        try {
+          localStorage.setItem("bns-lang", lang);
+        } catch {
+          // Storage blocked: the switch still works for this visit.
+        }
+        history.replaceState(null, "", `#${lang}`);
+      }
+    };
+    const current = root.getAttribute("data-legal-lang") === "ms" ? "ms" : "en";
+    setLang(current, false);
+    langButtons.forEach((b) => b.addEventListener("click", () => setLang(b.dataset.setLang, true)));
+    window.addEventListener("hashchange", () => {
+      const h = location.hash.slice(1);
+      if (h === "en" || h === "ms") setLang(h, true);
     });
   }
 })();

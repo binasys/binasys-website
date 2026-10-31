@@ -1,7 +1,7 @@
 # Public company facts. Source: binasys-company-context skill (reference/company.md).
 # Never add client names, prices or internal metrics here.
 name: Binasys
-tagline: "Business, better."
+tagline: "Build tomorrow. Start today."
 website: https://www.binasys.com.my
 office: North Kiara, Kuala Lumpur, Malaysia
 # Registered company details from SSM. Shown in the footer and legal pages once filled in.
@@ -15,6 +15,8 @@ linkedin: null
 contact:
   email: mgmt@binasys.com.my
   phone: "+60 12-562 6929"
+  # WhatsApp number in international format, digits only (used for the wa.me link). null hides it.
+  whatsapp: "60125626929"
   # Formspree endpoint for the enquiry form on contact.html. Submissions are emailed to the
   # address set on the form in the Formspree dashboard (mgmt@binasys.com.my).
   formEndpoint: https://formspree.io/f/myeedobp

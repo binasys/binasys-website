@@ -16,15 +16,15 @@
 
 - name: Jack
   title: Co-founder
-  role: Entrepreneurship & operations
+  role: Entrepreneurship & Operations
   bio: Experience running businesses and managing the day-to-day work behind them.
 
 - name: Stuart
   title: Co-founder
-  role: Strategy & consulting
+  role: Strategy & Consulting
   bio: Consulting experience at Bain, working through business problems and planning what to do next.
 
-- name: Bin Xuan
+- name: Jimmy
   title: Co-founder
-  role: Coding, data & analytics
+  role: Tech, Data & Analytics
   bio: Technical expertise to analyse your data and build tools around the way your business works.
