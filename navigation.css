@@ -1,0 +1,20 @@
+/* Native document changes: no router, fetch layer, loader or exit delay. */
+/* Opt-in is added by navigation.js only for supported HTTP(S) visits. */
+::view-transition-group(root),::view-transition-group(site-header){animation-duration:220ms;animation-timing-function:cubic-bezier(.22,1,.36,1)}
+::view-transition-old(root){animation:page-depart 150ms ease-out both}
+::view-transition-new(root){animation:page-arrive 220ms cubic-bezier(.22,1,.36,1) both}
+.site-header{view-transition-name:site-header}
+::view-transition-old(site-header){animation:none;opacity:0}
+::view-transition-new(site-header){animation:none}
+@keyframes page-depart{to{opacity:0}}
+@keyframes page-arrive{from{opacity:.65}to{opacity:1}}
+/* Also works from local files and in browsers without document transitions. */
+main{animation:page-arrive 240ms ease-out both}
+.has-page-transition main{animation:none}
+.header-inner nav a[aria-current=page]{color:var(--ink)}
+.header-inner nav a[aria-current=page]:after{transform:scaleX(1);background:var(--ink)}
+#mobile-menu a[aria-current]{color:var(--blue)}
+@media(prefers-reduced-motion:reduce){
+  @view-transition{navigation:none}
+  main,::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
+}
