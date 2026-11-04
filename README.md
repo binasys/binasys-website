@@ -16,6 +16,9 @@ npm run lint     # format check + Stylelint + build + HTMLHint
 
 Edit files in `src/`, never `dist/`.
 
+CSS and JavaScript URLs include a content hash from `src/_data/assetUrls.js`, so browsers fetch
+the matching assets when a new version is deployed.
+
 | Path                      | What                                                                     |
 | ------------------------- | ------------------------------------------------------------------------ |
 | `src/*.html`              | One file per page: front matter + `<main>` content                       |
