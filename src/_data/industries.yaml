@@ -1,74 +1,37 @@
-# Industries, shown as tabs on the "Your business" page (industries.html).
-#
-# How to edit:
-# - Change the text after the colon. Keep quotes around text that contains a colon.
-# - Lines under "headline:" and "intro:" are shown on separate lines on the page. Use one line
-#   or several; each starts with "- ".
-# - To add an industry, copy a whole block (from "- id:" to the last "helps" line) and paste it
-#   below. Give it a new, unique id in lower case with no spaces (e.g. "clinics").
-# - "icon" must be one of: factory, boxes, shop, document. Ask the website team for a new icon.
-# - The order here is the order of the tabs. The first one is open when the page loads.
-#
-# House style: British English, short sentences, plain words. Say what we do for the business.
-# Never name clients.
-#
-# Fields:
-#   id:        Short unique name used in the page address. Don't change it once published.
-#   tab:       Label on the tab button.
-#   eyebrow:   Small capital-letter label above the headline.
-#   headline:  Large heading (one item per line).
-#   intro:     Short text under the heading (one item per line).
-#   helps:     The "We can help you:" list.
-
+# Example project scopes, not claims of completed client work. Preserve published IDs.
 - id: manufacturing
-  tab: Factories
+  tab: Manufacturing
   icon: factory
-  headline:
-    - Keep production
-    - moving.
-  intro:
-    - Less time hunting for the right order sheet or stock count.
+  headline: Production and operations
+  intro: Business planning and technology for the work from order to delivery.
   helps:
-    - Turn customer orders into job sheets your floor team can follow.
-    - Organise inspection records so quality issues are easier to trace.
-    - Plan when to buy materials and when machines are due for servicing.
-
+    - Review production planning and management reporting.
+    - Turn customer orders into job sheets and organise quality records.
+    - Plan material purchases and maintenance schedules.
 - id: distribution
-  tab: Distributors & wholesalers
+  tab: Distribution & wholesale
   icon: boxes
-  headline:
-    - Stay on top of
-    - orders and stock.
-  intro:
-    - Less retyping.
-    - Less chasing payments.
+  headline: Sales, stock and fulfilment
+  intro: Improve the flow between customer demand, purchasing and delivery.
   helps:
-    - Prepare quotes and orders faster, and get a reminder when a customer is due to reorder.
-    - See what needs restocking and what isn’t selling.
-    - Match payments to invoices and follow up on overdue bills.
-
+    - Review sales performance, stock availability and purchasing.
+    - Prepare quotations and orders with fewer repeated entries.
+    - Match payments to invoices and support follow-up on overdue accounts.
 - id: retail
-  tab: Shops & online stores
+  tab: Retail & e-commerce
   icon: shop
-  headline:
-    - Know what’s selling.
-    - Know what’s in stock.
-  intro: []
+  headline: Retail and online growth
+  intro: Bring marketing and store operations into the same business plan.
   helps:
-    - Keep shop and online orders in one place.
-    - Update product details and plan when to restock.
-    - Check payouts from marketplaces like Shopee and Lazada, and flag anything missing.
-
+    - Develop store websites and marketing campaigns.
+    - Review product performance and plan stock replenishment.
+    - Connect order, stock and payment records.
 - id: legal
-  tab: Law firms
+  tab: Professional services
   icon: document
-  headline:
-    - More time
-    - for your clients.
-  intro:
-    - Less time gathering details
-    - and searching documents.
+  headline: Client service and administration
+  intro: Support client-facing teams with more consistent information and workflows.
   helps:
-    - Collect new client details and book appointments without the back-and-forth.
+    - Organise client onboarding and appointment workflows.
     - Find key terms and dates in documents for your team to review.
-    - Prepare bills and send clients regular updates on their matters.
+    - Develop service websites and review enquiry performance.

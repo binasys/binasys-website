@@ -9,10 +9,10 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("serviceData", (services) =>
     JSON.stringify(
       Object.fromEntries(
-        services.map((s) => [
+        services.map((s, index) => [
           s.id,
           {
-            category: s.name.toUpperCase(),
+            category: `Service ${String(index + 1).padStart(2, "0")}`,
             title: [].concat(s.headline).join(" "),
             intro: s.intro,
             offers: s.offers,

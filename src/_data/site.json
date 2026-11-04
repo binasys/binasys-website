@@ -2,19 +2,69 @@
   "lang": "en",
   "basePath": "/",
   "mainNav": [
-    { "id": "services", "label": "What we do", "url": "/services" },
-    { "id": "industries", "label": "Who we work with", "url": "/industries" },
-    { "id": "about", "label": "About", "url": "/about" }
+    {
+      "id": "about",
+      "label": "About us",
+      "url": "/about"
+    },
+    {
+      "id": "services",
+      "label": "Services",
+      "url": "/services"
+    },
+    {
+      "id": "industries",
+      "label": "Industries",
+      "url": "/industries"
+    },
+    {
+      "id": "approach",
+      "label": "Our approach",
+      "url": "/approach"
+    }
   ],
   "footerNav": [
-    { "id": "home", "label": "Home", "url": "/" },
-    { "id": "services", "label": "What we do", "url": "/services" },
-    { "id": "industries", "label": "Who we work with", "url": "/industries" },
-    { "id": "about", "label": "About", "url": "/about" },
-    { "id": "contact", "label": "Contact", "url": "/contact" }
+    {
+      "id": "home",
+      "label": "Home",
+      "url": "/"
+    },
+    {
+      "id": "about",
+      "label": "About us",
+      "url": "/about"
+    },
+    {
+      "id": "services",
+      "label": "Services",
+      "url": "/services"
+    },
+    {
+      "id": "industries",
+      "label": "Industries",
+      "url": "/industries"
+    },
+    {
+      "id": "approach",
+      "label": "Our approach",
+      "url": "/approach"
+    },
+    {
+      "id": "contact",
+      "label": "Contact us",
+      "url": "/contact"
+    }
   ],
   "legalNav": [
-    { "id": "privacy", "label": "Privacy notice", "url": "/privacy" },
-    { "id": "terms", "label": "Terms of use", "url": "/terms" }
+    {
+      "id": "privacy",
+      "label": "Privacy notice",
+      "url": "/privacy"
+    },
+    {
+      "id": "terms",
+      "label": "Terms of use",
+      "url": "/terms"
+    }
   ]
 }

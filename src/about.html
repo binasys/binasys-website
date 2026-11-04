@@ -1,65 +1,35 @@
 ---
-title: "About | Binasys"
-description: "Meet Binasys: entrepreneurship and operations, consulting experience at Bain, and expertise in coding, data and analytics."
+title: "About us | Binasys"
+description: "Binasys is a business consulting firm based in Kuala Lumpur, working with Malaysian SMEs on business strategy, technology and marketing."
 pageId: "about"
 ---
 
-<section class="about-section wrap" id="about" aria-labelledby="about-title">
+<section class="page-intro wrap" id="about" aria-labelledby="about-title">
   <a class="back-home" href="/"><span aria-hidden="true">←</span> Home</a>
-  <div class="section-top">
-    <p class="eyebrow">ABOUT</p>
-    <div class="about-heading">
-      <h1 id="about-title">A young firm, with real experience behind it.</h1>
-      <p>
-        We started Binasys in 2026, so the firm is young. Each of us worked in business, consulting
-        or tech before that.
-      </p>
-    </div>
-  </div>
-  <h2 class="team-label">Meet the team.</h2>
-  <div class="founder-grid founder-grid-text">
-    {% for person in team %}
-    <article class="founder-card">
-      <div class="founder-name">
-        <h3>{{ person.name | e }}</h3>
-        <span>{{ person.title | e }}</span>
-      </div>
-      <p class="founder-role">{{ person.role | e }}</p>
-      <p>{{ person.bio | e }}</p>
+  <p class="eyebrow">ABOUT US</p>
+  <h1 id="about-title">About Binasys</h1>
+</section>
+<section class="company-story wrap" aria-label="Our company">
+  {% for paragraph in company.about %}
+  <p>{{ paragraph | e }}</p>
+  {% endfor %}
+</section>
+<section class="company-values wrap" aria-labelledby="values-title">
+  <h2 id="values-title">Our values</h2>
+  <div class="values-grid">
+    {% for value in company.values %}
+    <article class="value-card">
+      <span class="number">{{ loop.index | pad2 }}</span>
+      <h3>{{ value.title | e }}</h3>
+      <p>{{ value.text | e }}</p>
     </article>
     {% endfor %}
   </div>
 </section>
-<section class="approach-section wrap reveal" id="approach" aria-labelledby="approach-title">
-  <div class="section-top">
-    <p class="eyebrow">WORKING WITH US</p>
-    <h2 id="approach-title">What working with a small firm means.</h2>
-  </div>
-  <ol class="steps">
-    <li class="reveal">
-      <span>01</span>
-      <div>
-        <h3>You’ll work with our founders.</h3>
-        <p>We plan the work with you and stay involved as it’s carried out.</p>
-      </div>
-    </li>
-    <li class="reveal">
-      <span>02</span>
-      <div>
-        <h3>We agree the work before we start.</h3>
-        <p>We send a written proposal. It says what we’d do and what it costs.</p>
-      </div>
-    </li>
-    <li class="reveal">
-      <span>03</span>
-      <div>
-        <h3>You’ll see progress as we go.</h3>
-        <p>Most work is split into small steps, so you see the first changes early.</p>
-      </div>
-    </li>
-  </ol>
+<section class="page-next wrap">
+  <a class="text-link" href="/approach">Our approach <span aria-hidden="true">↗</span></a>
 </section>
 <section class="contact-section contact-compact wrap">
-  <h2>Tell us what’s taking up your week.</h2>
-  <a class="primary" href="/contact">Let’s talk <span aria-hidden="true">↗</span></a>
+  <h2>Discuss your business needs.</h2>
+  <a class="primary" href="/contact">Contact us <span aria-hidden="true">↗</span></a>
 </section>
