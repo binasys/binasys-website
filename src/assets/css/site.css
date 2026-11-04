@@ -4255,16 +4255,6 @@ footer > small {
   }
 }
 
-/* Keep the brand headline on one line on desktop; retain two lines on mobile. */
-@media (min-width: 761px) {
-  .hero h1 {
-    white-space: nowrap;
-  }
-  .hero h1 .hero-line {
-    display: inline-block;
-  }
-}
-
 /* Selected wordmark 05: original lowercase lettering and blue join. */
 .wordmark {
   flex-shrink: 0;
@@ -4821,11 +4811,89 @@ main {
   }
 }
 
-/* The revised headline wraps naturally at all screen sizes. */
+/* Keep the longer copy inside the shared page measure at every viewport width. */
 .hero h1 {
+  max-inline-size: 18ch;
+  margin-inline: auto;
   white-space: normal;
   text-wrap: balance;
 }
 .hero h1 .hero-line {
   display: block;
+  max-inline-size: 100%;
+  margin-inline: 0;
+  padding-inline: 0;
+}
+.hero-intro {
+  max-inline-size: 68ch;
+  margin-inline: auto;
+  text-wrap: balance;
+}
+.art-card-bottom {
+  justify-content: flex-end;
+}
+
+/* Shared heading tracks keep the descriptions and links aligned across the cards. */
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 761px) {
+    .summary-grid {
+      row-gap: 0;
+    }
+    .summary-card {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: span 4;
+    }
+    .founder-grid-text {
+      row-gap: 0;
+    }
+    .founder-grid-text .founder-card {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: span 3;
+    }
+  }
+}
+
+/* The short contact bands no longer have an eyebrow occupying the first row. */
+.contact-compact:not(.home-contact) h2,
+.contact-compact:not(.home-contact) > .primary {
+  grid-row: 1;
+}
+.home-contact {
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "heading actions"
+    "promise actions";
+  gap: 16px 40px;
+}
+.home-contact h2 {
+  grid-area: heading;
+}
+.home-contact .contact-promise {
+  grid-area: promise;
+  margin: 0;
+  max-inline-size: 60ch;
+}
+.home-contact > .hero-actions {
+  grid-area: actions;
+  justify-content: flex-end;
+  margin: 0;
+}
+@media (max-width: 1000px) {
+  .home-contact {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "heading"
+      "promise"
+      "actions";
+  }
+  .home-contact > .hero-actions {
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 760px) {
+  .contact-compact:not(.home-contact) > .primary {
+    grid-row: 2;
+  }
 }
