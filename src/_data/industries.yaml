@@ -23,21 +23,19 @@
 - id: manufacturing
   tab: Factories
   icon: factory
-  eyebrow: MANUFACTURING
   headline:
     - Keep production
     - moving.
   intro:
-    - Keep orders, stock and production records organised.
+    - Less time hunting for the right order sheet or stock count.
   helps:
-    - Turn customer orders into clear production instructions.
+    - Turn customer orders into job sheets your floor team can follow.
     - Organise inspection records so quality issues are easier to trace.
-    - Plan stock purchases and maintenance reminders.
+    - Plan when to buy materials and when machines are due for servicing.
 
 - id: distribution
   tab: Distributors & wholesalers
   icon: boxes
-  eyebrow: DISTRIBUTORS & WHOLESALERS
   headline:
     - Stay on top of
     - orders and stock.
@@ -45,29 +43,25 @@
     - Less retyping.
     - Less chasing payments.
   helps:
-    - Prepare quotes and orders, with reminders to follow up on reorders.
+    - Prepare quotes and orders faster, and get a reminder when a customer is due to reorder.
     - See what needs restocking and what isn’t selling.
     - Match payments to invoices and follow up on overdue bills.
 
 - id: retail
   tab: Shops & online stores
   icon: shop
-  eyebrow: RETAIL & ONLINE STORES
   headline:
     - Know what’s selling.
     - Know what’s in stock.
-  intro:
-    - Keep track of orders,
-    - stock and payments.
+  intro: []
   helps:
     - Keep shop and online orders in one place.
-    - Keep product details up to date and plan when to restock.
-    - Check money received from online sales and flag missing payments.
+    - Update product details and plan when to restock.
+    - Check payouts from marketplaces like Shopee and Lazada, and flag anything missing.
 
 - id: legal
   tab: Law firms
   icon: document
-  eyebrow: LAW FIRMS
   headline:
     - More time
     - for your clients.
@@ -75,6 +69,6 @@
     - Less time gathering details
     - and searching documents.
   helps:
-    - Collect client details and arrange appointments.
+    - Collect new client details and book appointments without the back-and-forth.
     - Find key terms and dates in documents for your team to review.
-    - Prepare billing records and keep clients updated.
+    - Prepare bills and send clients regular updates on their matters.

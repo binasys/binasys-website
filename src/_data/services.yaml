@@ -1,4 +1,4 @@
-# Services, shown on the "How We Help" page (cards and "Explore" pop-up) and as the three
+# Services, shown on the "What we do" page (cards and service detail pop-up) and as the three
 # summary cards on the home page. Numbers (01, 02, 03) are added automatically from the order.
 #
 # How to edit:
@@ -25,16 +25,15 @@
     - Decide what
     - to do first.
   text:
-    - Find where AI can help.
-    - Make a plan worth putting into action.
-  intro: Start with how your business works and where you want it to go.
+    - We look at where your team’s time goes and agree what’s worth fixing first.
+  intro: Start here if you’re not sure what to fix first.
   offers:
     - Review the work taking up your team’s time.
-    - Identify where AI or a simpler process could help.
-    - Agree on priorities, costs and the work involved.
+    - Spot where a simpler process, or AI, would save time.
+    - Agree what to do first and what it will cost.
   home:
-    title: Know where to start.
-    text: Find where AI could help and what’s worth doing first.
+    title: Decide what to do first.
+    text: We look at where your team’s time goes and agree what’s worth fixing first.
 
 - id: clarity
   name: Analytics
@@ -42,16 +41,15 @@
     - Make sense of
     - your numbers.
   text:
-    - Bring your information together.
-    - See what needs your attention.
-  intro: Use the information you already have to make better decisions.
+    - Get your sales and cost figures in one place, so problems show up sooner.
+  intro: You probably have more useful data than you think. It’s just spread across different files.
   offers:
     - Bring together sales, costs and other business records.
-    - Find patterns and work out what they mean.
-    - Turn the findings into clear reports and next steps.
+    - Spot trends, like which products or customers make you the most money.
+    - Give you a short report you can act on.
   home:
-    title: Use your numbers.
-    text: Understand what’s happening in your business and what needs attention.
+    title: Make sense of your numbers.
+    text: Get your sales and cost figures in one place, so problems show up sooner.
 
 - id: work
   name: Implementation
@@ -67,5 +65,5 @@
     - Draft routine emails and prepare recurring reports.
     - Build tools for the tasks your team repeats.
   home:
-    title: Get time back.
-    text: Spend less of the day updating files, writing routine emails and chasing information.
+    title: Cut repetitive work.
+    text: Spend less time on routine emails, reports and updating files.

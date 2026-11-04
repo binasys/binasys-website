@@ -776,9 +776,15 @@
         });
         if (!response.ok) throw new Error(`Formspree responded ${response.status}`);
         enquiryForm.reset();
-        setStatus("Thank you. Your enquiry has been sent and we’ll be in touch soon.", "success");
+        setStatus(
+          "Thanks, we’ve got your message. We usually reply within one working day.",
+          "success",
+        );
       } catch {
-        setStatus("Sorry, your enquiry could not be sent. Please try again in a moment.", "error");
+        setStatus(
+          enquiryForm.dataset.errorMessage || "Sorry, that didn’t go through. Please try again.",
+          "error",
+        );
       } finally {
         submit.disabled = false;
       }

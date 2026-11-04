@@ -4820,3 +4820,12 @@ main {
     animation: none !important;
   }
 }
+
+/* The revised headline wraps naturally at all screen sizes. */
+.hero h1 {
+  white-space: normal;
+  text-wrap: balance;
+}
+.hero h1 .hero-line {
+  display: block;
+}
