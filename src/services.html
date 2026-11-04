@@ -1,5 +1,5 @@
 ---
-title: "How We Help"
+title: "What we do | Binasys"
 description: "Find where AI can help, reduce repetitive work and make sense of your business data. Strategy, analysis and tools built around your needs."
 pageId: "services"
 serviceDialog: true # adds the service detail dialog and its <noscript> style
@@ -7,12 +7,9 @@ serviceDialog: true # adds the service detail dialog and its <noscript> style
 
 <section class="page-intro wrap" aria-labelledby="services-title">
   <a class="back-home" href="/"><span aria-hidden="true">←</span> Home</a>
-  <p class="eyebrow">HOW WE HELP</p>
-  <h1 id="services-title">
-    A plan.<br />
-    And help to make it happen.
-  </h1>
-  <p>Strategy, analysis and tools built around what you need.</p>
+  <p class="eyebrow">WHAT WE DO</p>
+  <h1 id="services-title">We help you plan the work. Then we help you do it.</h1>
+  <p>Pick one, or just talk to us and we’ll suggest where to begin.</p>
 </section>
 <section class="help-section wrap" id="help" aria-label="Our services">
   {% from "macros.njk" import lines %}
@@ -27,8 +24,8 @@ serviceDialog: true # adds the service detail dialog and its <noscript> style
         class="service-trigger"
         data-service="{{ service.id }}"
         href="/services#service-{{ service.id }}"
-        aria-label="Explore {{ service.name | lower | e }}"
-        >Explore
+        aria-label="See what’s included in {{ service.name | e }}"
+        >See what’s included
         <span aria-hidden="true"
           ><svg width="16" height="16" viewBox="0 0 20 20" fill="none" focusable="false">
             <path
@@ -50,14 +47,10 @@ serviceDialog: true # adds the service detail dialog and its <noscript> style
 </section>
 <div class="page-next wrap">
   <a class="text-link" href="/industries"
-    >What this could look like for your business <span aria-hidden="true">↗</span></a
+    >See examples by industry <span aria-hidden="true">↗</span></a
   >
 </div>
 <section class="contact-section contact-compact wrap">
-  <p class="eyebrow">LET’S TALK</p>
-  <h2>
-    Where is your<br />
-    time going?
-  </h2>
+  <h2>Tell us what’s taking up your week.</h2>
   <a class="primary" href="/contact">Let’s talk <span aria-hidden="true">↗</span></a>
 </section>

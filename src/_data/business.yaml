@@ -1,9 +1,9 @@
 # Public company facts. Source: binasys-company-context skill (reference/company.md).
 # Never add client names, prices or internal metrics here.
 name: Binasys
-tagline: "Building Tomorrow, Starting Today."
+tagline: "Business consulting for Malaysian SMEs."
 website: https://www.binasys.com.my
-office: North Kiara, Kuala Lumpur, Malaysia
+office: Kuala Lumpur, Malaysia
 # Registered company details from SSM. Shown in the footer and legal pages once filled in.
 # Leave as null to hide. Example: legalName: "Binasys Sdn. Bhd."
 #                                  registrationNumber: "202601012345 (1234567-X)"

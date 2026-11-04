@@ -1,5 +1,5 @@
 ---
-title: "Contact Us"
+title: "Contact | Binasys"
 description: "Send Binasys an enquiry. Tell us about your business and what you would like to improve, and we will get back to you."
 pageId: "contact"
 ---
@@ -7,12 +7,12 @@ pageId: "contact"
 <section class="contact-page wrap" aria-labelledby="contact-page-title">
   <div class="section-top centered page-intro">
     <a class="back-home" href="/"><span aria-hidden="true">←</span> Home</a>
-    <p class="eyebrow">CONTACT US</p>
+    <p class="eyebrow">CONTACT</p>
     <h1 id="contact-page-title">
       Tell us about<br />
       your business.
     </h1>
-    <p>Send us your enquiry and we’ll get back to you.</p>
+    <p>A few lines is enough. We usually reply within one working day.</p>
   </div>
   <form
     class="enquiry-form"
@@ -20,6 +20,7 @@ pageId: "contact"
     action="{{ business.contact.formEndpoint }}"
     method="POST"
     aria-describedby="enquiry-note"
+    data-error-message="Sorry, that didn’t go through. Please try again{% if business.contact.whatsapp and business.contact.phone %}, or WhatsApp us on {{ business.contact.phone | e }}{% endif %}."
   >
     <input type="hidden" name="_subject" value="New website enquiry" />
     <div class="form-field">
@@ -27,7 +28,7 @@ pageId: "contact"
       <input id="enquiry-name" name="name" type="text" autocomplete="name" required />
     </div>
     <div class="form-field">
-      <label for="enquiry-role">Role</label>
+      <label for="enquiry-role">Your role</label>
       <input id="enquiry-role" name="role" type="text" autocomplete="organization-title" required />
     </div>
     <div class="form-field">
@@ -35,7 +36,7 @@ pageId: "contact"
       <input id="enquiry-email" name="email" type="email" autocomplete="email" required />
     </div>
     <div class="form-field">
-      <label for="enquiry-phone">Phone Number</label>
+      <label for="enquiry-phone">Phone</label>
       <input id="enquiry-phone" name="phone" type="phone" autocomplete="phone" required />
     </div>
     <div class="form-field">
@@ -47,12 +48,12 @@ pageId: "contact"
       <input id="enquiry-industry" name="industry" type="text" autocomplete="industry" required />
     </div>
     <div class="form-field form-field-wide">
-      <label for="enquiry-message">Enquiry</label>
+      <label for="enquiry-message">How can we help?</label>
       <textarea
         id="enquiry-message"
         name="message"
         rows="6"
-        placeholder="What would you like to improve?"
+        placeholder="For example: we spend hours every week copying orders into Excel."
         required
       ></textarea>
     </div>
@@ -61,8 +62,8 @@ pageId: "contact"
       <input id="enquiry-gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
     </div>
     <p class="form-note" id="enquiry-note">
-      We only use these details to reply to your enquiry. Your message is sent securely through our
-      form provider, Formspree. See our <a href="/privacy">privacy notice</a>.
+      We only use these details to reply to you. The form is run by Formspree. See our
+      <a href="/privacy">privacy notice</a>.
     </p>
     <div class="form-actions">
       <button class="primary" type="submit">Send enquiry <span aria-hidden="true">↗</span></button>

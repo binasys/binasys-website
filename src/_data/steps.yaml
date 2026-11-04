@@ -1,14 +1,14 @@
-# "How we work" steps, shown on the About Us page. Numbers (01, 02, 03) are added automatically.
+# "How it works" steps, shown on the home page. Numbers (01, 02, 03) are added automatically.
 #
 # How to edit: change the text after "title:" or "text:". To add a step, copy a whole block
 # (from "- title:" to the end of "text:"). The order here is the order on the page.
 # House style: British English, short sentences, headings in sentence case.
 
-- title: Understand your business.
-  text: We talk through the problems and see how your team works.
+- title: We get to know your business.
+  text: We hear what’s not working and see how your team does things today.
 
-- title: Agree on the work.
-  text: You receive a proposal with what we recommend, what it costs and how it could help.
+- title: We agree on the work.
+  text: We send a written proposal. It says what we’d do and what it costs.
 
-- title: Get to work.
-  text: Once you agree, we deliver the strategy, analysis or tools you need.
+- title: We get to work.
+  text: Once you say yes, we get started and keep you updated as we go.

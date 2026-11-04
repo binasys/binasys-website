@@ -1,5 +1,5 @@
 ---
-title: "Your Business"
+title: "Who we work with | Binasys"
 description: "Binasys works with SMEs across industries. Explore practical ways to reduce admin, organise information and put AI to work in your business."
 pageId: "industries"
 ---
@@ -8,15 +8,9 @@ pageId: "industries"
   <div class="wrap">
     <div class="section-top centered page-intro">
       <a class="back-home" href="/"><span aria-hidden="true">←</span> Home</a>
-      <p class="eyebrow">YOUR BUSINESS</p>
-      <h1 id="industry-title">
-        Built around<br />
-        your business.
-      </h1>
-      <p>
-        We work with SMEs across industries.<br />
-        Here are a few ways we can help.
-      </p>
+      <p class="eyebrow">WHO WE WORK WITH</p>
+      <h1 id="industry-title">What we can do in your industry.</h1>
+      <p>Here are some jobs we can take off your plate. Pick the one closest to your business.</p>
     </div>
     {% from "macros.njk" import lines %}
     <div class="industry-tabs" role="tablist" aria-label="Choose your industry">
@@ -44,9 +38,10 @@ pageId: "industries"
           <span class="industry-icon" aria-hidden="true"
             >{% include "icons/" + (item.icon or "document") + ".njk" ignore missing %}</span
           >
-          <p class="eyebrow">{{ item.eyebrow | e }}</p>
           <h3>{{ lines(item.headline) }}</h3>
+          {% if item.intro | length %}
           <p>{{ lines(item.intro) }}</p>
+          {% endif %}
         </div>
         <div class="industry-offer">
           <h4>We can help you:</h4>
@@ -66,7 +61,6 @@ pageId: "industries"
   </div>
 </section>
 <section class="contact-section contact-compact wrap">
-  <p class="eyebrow">LET’S START HERE</p>
-  <h2>What’s slowing you down?</h2>
+  <h2>Tell us what’s taking up your week.</h2>
   <a class="primary" href="/contact">Let’s talk <span aria-hidden="true">↗</span></a>
 </section>
