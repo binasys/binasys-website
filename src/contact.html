@@ -8,11 +8,11 @@ pageId: "contact"
   <div class="section-top centered page-intro">
     <a class="back-home" href="/"><span aria-hidden="true">←</span> Home</a>
     <p class="eyebrow">CONTACT</p>
-    <h1 id="contact-page-title">
-      Tell us about<br />
-      your business.
-    </h1>
-    <p>A few lines is enough. We usually reply within one working day.</p>
+    <h1 id="contact-page-title">Contact Binasys</h1>
+    <p>
+      Tell us about your organisation and the work you have in mind. We usually reply within one
+      working day.
+    </p>
   </div>
   <form
     class="enquiry-form"
@@ -20,7 +20,7 @@ pageId: "contact"
     action="{{ business.contact.formEndpoint }}"
     method="POST"
     aria-describedby="enquiry-note"
-    data-error-message="Sorry, that didn’t go through. Please try again{% if business.contact.whatsapp and business.contact.phone %}, or WhatsApp us on {{ business.contact.phone | e }}{% endif %}."
+    data-error-message="Your enquiry could not be sent. Please try again{% if business.contact.whatsapp and business.contact.phone %}, or WhatsApp us on {{ business.contact.phone | e }}{% endif %}."
   >
     <input type="hidden" name="_subject" value="New website enquiry" />
     <div class="form-field">
@@ -53,7 +53,7 @@ pageId: "contact"
         id="enquiry-message"
         name="message"
         rows="6"
-        placeholder="For example: we spend hours every week copying orders into Excel."
+        placeholder="Describe your objectives, current requirements and proposed timing."
         required
       ></textarea>
     </div>
@@ -72,7 +72,7 @@ pageId: "contact"
   </form>
   {% if business.contact.email or business.contact.phone or business.contact.whatsapp %}
   <div class="contact-direct">
-    <p>Prefer to reach us directly?</p>
+    <p>Contact details</p>
     <div class="contact-direct-actions">{% include "partials/contact-pills.njk" %}</div>
   </div>
   {% endif %}

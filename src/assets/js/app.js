@@ -15,7 +15,7 @@
       "#help": "/services",
       "#industries": "/industries",
       "#about": "/about#about",
-      "#approach": "/about#approach",
+      "#approach": "/approach",
       "#service-sales": "/services#service-sales",
       "#service-work": "/services#service-work",
       "#service-clarity": "/services#service-clarity",
@@ -25,6 +25,10 @@
       return true;
     }
     return false;
+  }
+  if (page === "about" && location.hash === "#approach") {
+    location.replace(new URL("/approach", location.href));
+    return;
   }
   if (redirectLegacyHomeHash()) return;
   addEventListener("hashchange", redirectLegacyHomeHash);
@@ -583,8 +587,10 @@
       serviceClosing = false,
       serviceCloseRequested = false;
     let afterServiceClose = null;
-    const serviceFromURL = () =>
-      location.hash.startsWith("#service-") ? location.hash.slice(9) : null;
+    const serviceFromURL = () => {
+      const id = location.hash.startsWith("#service-") ? location.hash.slice(9) : null;
+      return id === "clarity" ? "work" : id;
+    };
     function fillService(id) {
       const data = services[id];
       if (!data) return;
@@ -777,12 +783,12 @@
         if (!response.ok) throw new Error(`Formspree responded ${response.status}`);
         enquiryForm.reset();
         setStatus(
-          "Thanks, we’ve got your message. We usually reply within one working day.",
+          "Thank you. Your enquiry has been received. We usually reply within one working day.",
           "success",
         );
       } catch {
         setStatus(
-          enquiryForm.dataset.errorMessage || "Sorry, that didn’t go through. Please try again.",
+          enquiryForm.dataset.errorMessage || "Your enquiry could not be sent. Please try again.",
           "error",
         );
       } finally {

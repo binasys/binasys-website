@@ -1,29 +1,41 @@
 ---
-title: "What we do | Binasys"
-description: "Find where AI can help, reduce repetitive work and make sense of your business data. Strategy, analysis and tools built around your needs."
+title: "Services | Binasys"
+description: "AI and automation, strategy and business consulting, and marketing strategy and execution for Malaysian SMEs."
 pageId: "services"
 serviceDialog: true # adds the service detail dialog and its <noscript> style
 ---
 
 <section class="page-intro wrap" aria-labelledby="services-title">
   <a class="back-home" href="/"><span aria-hidden="true">←</span> Home</a>
-  <p class="eyebrow">WHAT WE DO</p>
-  <h1 id="services-title">We help you plan the work. Then we help you do it.</h1>
-  <p>Pick one, or just talk to us and we’ll suggest where to begin.</p>
+  <p class="eyebrow">SERVICES</p>
+  <h1 id="services-title">Our services</h1>
+  <p>
+    Our services cover advice and implementation across technology, business operations and
+    marketing.
+  </p>
 </section>
 <section class="help-section wrap" id="help" aria-label="Our services">
   {% from "macros.njk" import lines %}
   <div class="help-grid">
     {% for service in services %}
     <article class="help-card" data-kind="{{ service.id }}" id="{{ service.id }}">
-      <span class="number">{{ loop.index | pad2 }} / {{ service.name | upper | e }}</span>
+      <span class="number">{{ loop.index | pad2 }}</span>{% if service.id == "work" %}<span
+        id="clarity"
+        class="anchor-alias"
+        aria-hidden="true"
+      ></span
+      ><span id="service-clarity" class="anchor-alias" aria-hidden="true"></span>{% endif %}<span
+        id="service-{{ service.id }}"
+        class="anchor-alias"
+        aria-hidden="true"
+      ></span>
       <h3>{{ lines(service.headline) }}</h3>
       <p>{{ lines(service.text) }}</p>
       {% include "service-art/" + service.id + ".njk" ignore missing %}
       <a
         class="service-trigger"
         data-service="{{ service.id }}"
-        href="/services#service-{{ service.id }}"
+        href="/services#{{ service.id }}"
         aria-label="See what’s included in {{ service.name | e }}"
         >See what’s included
         <span aria-hidden="true"
@@ -51,6 +63,6 @@ serviceDialog: true # adds the service detail dialog and its <noscript> style
   >
 </div>
 <section class="contact-section contact-compact wrap">
-  <h2>Tell us what’s taking up your week.</h2>
-  <a class="primary" href="/contact">Let’s talk <span aria-hidden="true">↗</span></a>
+  <h2>Discuss your business needs.</h2>
+  <a class="primary" href="/contact">Contact us <span aria-hidden="true">↗</span></a>
 </section>

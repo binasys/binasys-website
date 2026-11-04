@@ -4897,3 +4897,135 @@ main {
     grid-row: 2;
   }
 }
+
+/* Company information and the dedicated engagement page share the page measure. */
+.company-story {
+  margin-top: 32px;
+  max-width: 800px;
+  font-size: 19px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.company-story p + p {
+  margin-top: 24px;
+}
+.company-values {
+  padding-block: 80px 20px;
+}
+.company-values h2 {
+  font-size: clamp(32px, 4vw, 44px);
+  letter-spacing: -0.04em;
+  margin-bottom: 32px;
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.value-card {
+  min-width: 0;
+  padding: 32px;
+  border-radius: 24px;
+  background: var(--surface);
+}
+.value-card .number {
+  margin-bottom: 32px;
+}
+.value-card h3 {
+  font-size: 28px;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.value-card p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+.engagement-section {
+  padding-block: 48px 40px;
+}
+.engagement-section .steps h2 {
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  margin-bottom: 16px;
+}
+.engagement-section .steps p {
+  max-width: 68ch;
+}
+.section-link {
+  margin-top: 28px;
+}
+.industry-case-studies {
+  padding-block: 60px;
+}
+.anchor-alias {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.help-card[id] {
+  position: relative;
+}
+.service-pagination button {
+  min-width: 0;
+  white-space: normal;
+}
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 1001px) {
+    .help-grid {
+      row-gap: 0;
+    }
+    .help-card,
+    .help-card:last-child {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: subgrid;
+      grid-row: span 5;
+    }
+  }
+  @media (min-width: 901px) {
+    .values-grid {
+      row-gap: 0;
+    }
+    .value-card {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: span 3;
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .help-card,
+  .help-card:last-child {
+    display: flex;
+    flex-direction: column;
+  }
+  .help-card .service-art {
+    align-self: center;
+  }
+  .help-card h3,
+  .help-card p {
+    max-width: 100%;
+    min-height: 0;
+  }
+}
+@media (max-width: 900px) {
+  .values-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 760px) {
+  .company-story {
+    font-size: 17px;
+  }
+  .company-values {
+    padding-top: 56px;
+  }
+  .value-card {
+    padding: 28px;
+  }
+  .engagement-section .steps h2 {
+    font-size: 28px;
+  }
+}

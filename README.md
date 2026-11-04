@@ -36,13 +36,15 @@ Most content lives in plain-text YAML files in `src/_data/`. Each file starts wi
 edit it. You can edit them on GitHub (open the file, click the pencil icon, then "Commit changes");
 the site rebuilds and updates in a few minutes.
 
-| File              | What it controls                                                                      |
-| ----------------- | ------------------------------------------------------------------------------------- |
-| `business.yaml`   | Company name, tagline, office, email, phone, registered name and SSM number, LinkedIn |
-| `team.yaml`       | The founders on the About Us page                                                     |
-| `steps.yaml`      | "How we work" steps on the About Us page                                              |
-| `services.yaml`   | Services: cards and pop-ups on "How We Help", summary cards on the home page          |
-| `industries.yaml` | Industry tabs on "Your Business"                                                      |
+| File                      | What it controls                                                                                               |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `business.yaml`           | Company name, tagline, office, email, phone, registered name and SSM number, LinkedIn                          |
+| `company.yaml`            | Company overview and values on About us; homepage company summary                                              |
+| `steps.yaml`              | Business review, scope and proposal, implementation, and follow-up on Our approach                             |
+| `services.yaml`           | AI & automation, Strategy & business consulting, and Marketing & growth; cards, dialogs and homepage summaries |
+| `industries.yaml`         | Sector tabs and example applications on Industries                                                             |
+| `caseStudies.yaml`        | Approved case studies only; the section stays hidden while the list is empty                                   |
+| `team.yaml`, `proof.yaml` | Retired public profile/proof collections; intentionally empty                                                  |
 
 YAML tips: keep the indentation exactly as it is (spaces, not tabs); lines in a list start with
 `- `; put text in quotes if it contains a colon (`:`). If the site fails to build after an edit,
@@ -58,12 +60,16 @@ Agents working on the site should use the `binasys-site`, `binasys-brand` and
 ## Deploying
 
 `.github/workflows/deploy.yml` builds and publishes `dist/` to GitHub Pages on every push to `main`.
-Pull requests only build and lint. The site is currently served from `/binasys-website/`, so all
-paths are relative.
+Pull requests only build and lint. The live custom domain is https://binasys.com.my/ (`src/CNAME`); `basePath` is `/`.
+Site links use root-relative paths such as `/services`.
 
-The custom domain `www.binasys.com.my` is registered. To switch to it:
+The primary navigation is About us, Services, Industries and Our approach. The logo links home;
+Contact us is a separate action. About us describes the company and its values, without personal
+profiles or photographs. Marketing includes strategy and execution, including campaigns and websites.
 
-1. Point DNS at GitHub Pages (`www` CNAME to `binasys.github.io`; apex A records to GitHub's Pages IPs).
-2. Add `src/CNAME` containing `www.binasys.com.my` (already passed through by `eleventy.config.js`).
-3. Change `basePath` in `src/_data/site.json` to `/` (used by the 404 page).
-4. Set the custom domain and enforce HTTPS in the repository's Pages settings.
+Keep service IDs `work` and `sales` stable for existing bookmarks. The former analytics dialog
+`#service-clarity` opens AI & automation; analytics supports the current services. `/about#approach`
+and the legacy homepage `#approach` redirect to `/approach`.
+
+Only add case studies to `caseStudies.yaml` with client approval and sourced scope/outcomes.
+Industry applications are examples, not claims of completed client work.

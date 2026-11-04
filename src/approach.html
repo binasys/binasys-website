@@ -1,0 +1,36 @@
+---
+title: "Our approach | Binasys"
+description: "How Binasys works with clients: business review, scope and proposal, implementation, and follow-up."
+pageId: "approach"
+---
+
+<section class="page-intro wrap" aria-labelledby="approach-title">
+  <a class="back-home" href="/"><span aria-hidden="true">←</span> Home</a>
+  <p class="eyebrow">OUR APPROACH</p>
+  <h1 id="approach-title">How we work with clients</h1>
+  <p>
+    Each engagement follows an agreed scope, with defined responsibilities and regular progress
+    reviews.
+  </p>
+</section>
+<section class="engagement-section wrap" aria-label="Engagement stages">
+  <ol class="steps">
+    {% for step in steps %}
+    <li class="reveal">
+      <span>{{ loop.index | pad2 }}</span>
+      <div>
+        <h2>{{ step.title | e }}</h2>
+        <p>{{ step.text | e }}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+  <p class="steps-note">
+    The first conversation is free and without obligation. Any further work is set out in a written
+    proposal.
+  </p>
+</section>
+<section class="contact-section contact-compact wrap">
+  <h2>Discuss your business needs.</h2>
+  <a class="primary" href="/contact">Contact us <span aria-hidden="true">↗</span></a>
+</section>

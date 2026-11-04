@@ -1,69 +1,40 @@
-# Services, shown on the "What we do" page (cards and service detail pop-up) and as the three
-# summary cards on the home page. Numbers (01, 02, 03) are added automatically from the order.
-#
-# How to edit:
-# - Change the text after the colon. Lines under "headline:" and "text:" are shown on separate
-#   lines on the page; each starts with "- ".
-# - Keep the "id" values as they are: they link each service to its illustration and to page
-#   addresses people may have bookmarked. Adding a new service needs the website team.
-#
-# House style: British English, short sentences, plain words. Say "We use AI to <task>", not
-# "AI-powered". No prices. Never name clients.
-#
-# Fields:
-#   id:        Fixed internal name (don't change).
-#   name:      Service name: on the card label, the pop-up and the pop-up's buttons.
-#   headline:  Card heading (one item per line). Also the pop-up heading.
-#   text:      Short card text (one item per line).
-#   intro:     First sentence in the pop-up.
-#   offers:    What we do (list in the pop-up, and shown on the card if JavaScript is off).
-#   home:      The summary card on the home page (title and text).
+# Public services approved on 5 November 2026. Keep published IDs stable.
+# work and sales retain existing bookmarks; the former clarity service maps to work (analytics).
+- id: work
+  name: AI & automation
+  headline: AI & automation
+  text: We design and implement automations that reduce manual processing and connect existing systems.
+  intro: We design and implement automations that reduce manual processing and connect existing systems. Projects can include document workflows, reporting and internal business tools.
+  offers:
+    - Review the workflow and identify where automation can support it.
+    - Develop document workflows, recurring reports and internal tools.
+    - Connect existing systems and test the automation with your team.
+  home:
+    title: AI & automation
+    text: We design and implement automations that reduce manual processing and connect existing systems.
 
 - id: sales
-  name: Strategy
-  headline:
-    - Decide what
-    - to do first.
-  text:
-    - We look at where your team’s time goes and agree what’s worth fixing first.
-  intro: Start here if you’re not sure what to fix first.
+  name: Strategy & business consulting
+  headline: Strategy & business consulting
+  text: We review business performance and operations, helping owners establish priorities and develop a plan for implementation.
+  intro: We review business performance and operations, helping owners establish priorities and develop a plan for implementation.
   offers:
-    - Review the work taking up your team’s time.
-    - Spot where a simpler process, or AI, would save time.
-    - Agree what to do first and what it will cost.
+    - Review business performance, operations and available information.
+    - Assess priorities and the resources required to address them.
+    - Develop an implementation plan with agreed responsibilities.
   home:
-    title: Decide what to do first.
-    text: We look at where your team’s time goes and agree what’s worth fixing first.
+    title: Strategy & business consulting
+    text: We review business performance and operations, helping owners establish priorities and develop a plan for implementation.
 
-- id: clarity
-  name: Analytics
-  headline:
-    - Make sense of
-    - your numbers.
-  text:
-    - Get your sales and cost figures in one place, so problems show up sooner.
-  intro: You probably have more useful data than you think. It’s just spread across different files.
+- id: marketing
+  name: Marketing & growth
+  headline: Marketing & growth
+  text: We develop marketing strategies and deliver campaigns and websites. Performance is assessed against agreed business objectives.
+  intro: We develop marketing strategies and deliver campaigns and websites. Performance is assessed against agreed business objectives.
   offers:
-    - Bring together sales, costs and other business records.
-    - Spot trends, like which products or customers make you the most money.
-    - Give you a short report you can act on.
+    - Define the marketing strategy, audience and campaign objectives.
+    - Develop websites and implement marketing campaigns.
+    - Review performance against the agreed business objectives.
   home:
-    title: Make sense of your numbers.
-    text: Get your sales and cost figures in one place, so problems show up sooner.
-
-- id: work
-  name: Implementation
-  headline:
-    - Cut repetitive
-    - work.
-  text:
-    - Spend less time on routine emails,
-    - reports and updating files.
-  intro: Give your team tools that fit the way they work.
-  offers:
-    - Reduce copying information between emails and files.
-    - Draft routine emails and prepare recurring reports.
-    - Build tools for the tasks your team repeats.
-  home:
-    title: Cut repetitive work.
-    text: Spend less time on routine emails, reports and updating files.
+    title: Marketing & growth
+    text: We develop marketing strategies and deliver campaigns and websites. Performance is assessed against agreed business objectives.

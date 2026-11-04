@@ -9,6 +9,19 @@ A plain static HTML/CSS/JS site. Eleventy runs **only at build time** to wrap ea
 layout. Visitors get static files from `dist/`. Never add a runtime framework, server code, bundler
 or client-side router.
 
+## Current approved site structure (5 November 2026)
+
+Jack's approved structure and copy supersede historical navigation, service and profile examples below:
+About us, Services, Industries, Our approach, with a separate Contact us action. About us covers
+company and values, without founder profiles or photos. Services are AI & automation, Strategy &
+business consulting, and Marketing & growth (strategy and execution, including campaigns and websites).
+Analytics supports these services. Industry applications are examples; case studies require approved
+client facts. `company.yaml`, `steps.yaml`, `services.yaml`, `industries.yaml` and `caseStudies.yaml`
+are the current content sources. Public `team.yaml` and `proof.yaml` are intentionally empty.
+
+The live domain is `https://binasys.com.my/`; the source now uses root-relative extensionless links
+such as `/services`. Preserve this established deployment configuration and content-hashed asset URLs.
+
 ## Related skills (they take priority over this one)
 
 - **`binasys-brand`**: which logo to use, logo rules, colours, fonts, brand compliance review.
